@@ -39,13 +39,13 @@ header {
 h1 {
   font-family: sans-serif;
   margin: 15px 0;
-  font-size: 2.50em;
+  font-size: 1.75em;
   font-weight: normal;
   line-height: 0.8em;
 }
 
 h2 {
-  font-size: 1.75em;
+  font-size: 1.00em;
   margin: -5px 0 0;
   font-weight: normal;
 }
@@ -73,7 +73,7 @@ h2 {
 
  nav li {
    display: inline-block;
-   font-size: 1.30em;
+   /*font-size: 1.00em;*/
    padding-left: 10px;
    padding-right: 10px;
  }
@@ -87,12 +87,12 @@ footer {
   text-align: center;
   clear: both;
   padding-top: 50px;
-  font-size: 1.00em;
+  font-size: 0.75em;
 }
 
 .social-icon {
-  width: 40px;
-  height: 40px;
+  width: 20px;
+  height: 20px;
   margin: 0 5px;
 }
 
@@ -112,7 +112,11 @@ nav {
   background-color: #7E8F7C;
 }
 
-nav a.selected {
+nav a.visited {
+  color: #FDFFE7;
+}
+
+nav a.selected, nav a:hover {
   color: #FDF3E7;
 }
 
