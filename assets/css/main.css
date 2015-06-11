@@ -15,8 +15,22 @@ body {
   color: #FFF056;
 }
 
+#wrapper {
+  max-width: 940px;
+  margin: 0 auto;
+  padding: 0 5%;
+}
+
 a {
   text-decoration: none;
+}
+
+h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.50em;
+  color: #4AD6AF;
+  text-align: center;
+  margin: 0 0 1em 0;
 }
 
 /*********************************
@@ -43,7 +57,7 @@ header {
 }
 
 h1 {
-  font-family: sans-serif;
+  font-family: 'Lora', sans-serif;
   margin: 15px 0;
   font-size: 1.75em;
   font-weight: normal;
@@ -51,7 +65,8 @@ h1 {
 }
 
 h2 {
-  font-size: 1.00em;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.20em;
   margin: -5px 0 0;
   font-weight: normal;
 }
@@ -60,9 +75,18 @@ h2 {
   SECTION
  *********************************/
 
- section {
-   text-align: center;
- }
+section p {
+    font-family: fantasy;
+    color: #F6F6F6;
+    max-width: 940px;
+    text-align: center;
+    font-size: 1.25em;
+    font-weight: normal;
+}
+
+section p a {
+  color: #E9E581;
+}
 
 /*********************************
   NAV
@@ -87,6 +111,7 @@ h2 {
 
  nav li {
    display: inline-block;
+   font-family: "Montserrat", sans-serif;
    /*font-size: 1.00em;*/
    padding-left: 10px;
    padding-right: 10px;
@@ -105,10 +130,23 @@ footer {
 }
 
 .social-icon {
-  width: 20px;
-  height: 20px;
+  width: 40px;
+  height: 40px;
   margin: 0 5px;
 }
+
+/*********************************
+  PAGE: ABOUT
+ *********************************/
+
+
+
+ .profile-photo {
+   display: block;
+   max-width: 150px;
+   margin: 0 auto 30px;
+   border-radius: 100%;
+ }
 
 /*********************************
   COLORS
@@ -127,7 +165,7 @@ nav {
 }
 
 nav a.visited {
-  color: #FDFFE7;
+  color: #F5F3EE;
 }
 
 nav a.selected, nav a:hover {
@@ -136,4 +174,14 @@ nav a.selected, nav a:hover {
 
 footer a {
   color: #ccc;
+}
+
+/*********************************
+  RULES
+ *********************************/
+
+.picLeft {
+  float: left;
+  margin: 10px 20px 20px 20px;
+  background-color: #F6F6F6;
 }
