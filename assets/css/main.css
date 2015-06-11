@@ -5,6 +5,16 @@
   GENERAL
 *********************************/
 
+img {
+  max-width: 100%;
+}
+
+body {
+  font-family: sans-serif;
+  background-color: #2B3738;
+  color: #FFF056;
+}
+
 a {
   text-decoration: none;
 }
@@ -15,8 +25,83 @@ a {
 
 header {
   float:left;
-  text-align: center;
-  margin: 0 0 30px 0;
+  margin: -20px 0 30px 0;
   padding: 5px 0 0 0;
   width: 100%;
+}
+
+#logo {
+  text-align: center;
+  color: #FDF3E7;
+  margin: 0;
+}
+
+h1 {
+  font-family: sans-serif;
+  margin: 15px 0;
+  font-size: 1.75em;
+  font-weight: normal;
+  line-height: 0.8em;
+}
+
+h2 {
+  font-size: 1.00em;
+  margin: -5px 0 0;
+  font-weight: normal;
+}
+
+/*********************************
+  NAV
+ *********************************/
+
+ nav {
+   text-align: center;
+   padding: 10px 0;
+   margin: 20px 0 0;
+ }
+
+ nav ul {
+   list-style: none;
+   margin: 0 10px;
+   padding: 0;
+ }
+
+ nav a {
+   color: #3B3738;
+   padding: 15px 10px;
+ }
+
+ nav li {
+   display: inline-block;
+   padding-left: 10px;
+   padding-right: 10px;
+ }
+
+/*********************************
+  FOOTER
+ *********************************/
+
+footer a{
+  color: #ccc;
+  text-align: center;
+}
+
+/*********************************
+  COLORS
+ *********************************/
+
+header {
+  background: #3B3738;
+}
+
+h2 {
+  background-color: #3B3738;
+}
+
+nav {
+  background-color: #7E8F7C;
+}
+
+nav a.selected {
+  color: #FDF3E7;
 }
