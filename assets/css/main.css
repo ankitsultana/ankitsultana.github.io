@@ -84,7 +84,7 @@ h2 {
  *********************************/
 
 section p {
-    font-family: fantasy;
+    font-family: fantasy, 'Lora';
     color: #F6F6F6;
     max-width: 940px;
     text-align: center;
