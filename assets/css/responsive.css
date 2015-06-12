@@ -8,10 +8,10 @@
      float: left;
    }
 
-   #secondary {
+   /*#secondary {
      width: 40%;
      float: right;
-   }
+   }*/
 }
 
 @media screen and (min-width: 600px){
