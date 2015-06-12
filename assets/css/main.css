@@ -33,6 +33,14 @@ h3 {
   margin: 0 0 1em 0;
 }
 
+h4 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.30em;
+  color: #DFE2DB;
+  text-align: center;
+  margin: 0 0 1em 0;
+}
+
 /*********************************
   BACKG IMAGE
  *********************************/
@@ -147,6 +155,10 @@ footer {
    margin: 0 auto 30px;
    border-radius: 100%;
  }
+
+ /*********************************
+   PAGE: CONTACT
+  *********************************/
 
 /*********************************
   COLORS
