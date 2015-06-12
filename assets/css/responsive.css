@@ -4,7 +4,7 @@
    *********************************/
 
    #primary {
-     width: 50%;
+     width: 100%;
      float: left;
    }
 
@@ -15,5 +15,13 @@
 }
 
 @media screen and (min-width: 600px){
+  #primary {
+    width: 50%;
+    float: left;
+  }
 
+  #secondary {
+    width: 40%;
+    float: right;
+  }
 }
