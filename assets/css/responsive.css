@@ -1,4 +1,4 @@
-@media screen and (min-width: 0px){
+/*@media screen and (min-width: 0px){*/
   /*********************************
     TWO COLUMN LAYOUT
    *********************************/
@@ -12,7 +12,7 @@
    }*/
 }
 
-@media screen and (min-width: 660px){
+/*@media screen and (min-width: 660px){
   #primary {
     width: 50%;
     float: left;
@@ -22,4 +22,4 @@
     width: 40%;
     float: right;
   }
-}
+}*/
