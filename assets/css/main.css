@@ -11,7 +11,7 @@ img {
 
 body {
   font-family: sans-serif;
-  background-color: #2B3738;
+  background-color: #ECE4D8;
   color: #FFF056;
 }
 
@@ -28,7 +28,7 @@ a {
 h3 {
   font-family: 'Montserrat', sans-serif;
   font-size: 1.50em;
-  color: #4AD6AF;
+  color: #7C334F;
   text-align: center;
   margin: 0 0 1em 0;
 }
@@ -36,7 +36,7 @@ h3 {
 h4 {
   font-family: 'Montserrat', sans-serif;
   font-size: 1.30em;
-  color: #DFE2DB;
+  color: #4A96AD;
   text-align: center;
   margin: 0 0 1em 0;
 }
@@ -85,7 +85,7 @@ h2 {
 
 section p {
     font-family: fantasy, 'Lora';
-    color: #F6F6F6;
+    color: #558C89;
     max-width: 940px;
     text-align: center;
     font-size: 1.25em;
@@ -93,7 +93,7 @@ section p {
 }
 
 section p a {
-  color: #E9E581;
+  color: #E44424;
 }
 
 /*********************************
@@ -165,15 +165,15 @@ footer {
  *********************************/
 
 header {
-  background: #3B3738;
+  background: #7C334F;
 }
 
 h2 {
-  background-color: #3B3738;
+  background-color: #7C334F;
 }
 
 nav {
-  background-color: #7E8F7C;
+  background-color: #5B7F98;
 }
 
 nav a.visited {
@@ -186,6 +186,10 @@ nav a.selected, nav a:hover {
 
 footer a {
   color: #ccc;
+}
+
+h4 a {
+  color: inherit;
 }
 
 /*********************************
