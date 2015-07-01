@@ -1,96 +1,187 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="assets/css/normalize.css">
     <link rel="stylesheet" href="assets/css/main.css">
     <link rel="stylesheet" href="assets/css/responsive.css">
     <link href='http://fonts.googleapis.com/css?family=Lora:400,700|Montserrat:400,700' rel='stylesheet' type='text/css'>
     <title>Ankit Sultana | bk2dcradle</title>
-  </head>
-  <body>
+</head>
+
+<body>
+    <script>
+    // This is called with the results from from FB.getLoginStatus().
+    function statusChangeCallback(response) {
+        console.log('statusChangeCallback');
+        console.log(response);
+        // The response object is returned with a status field that lets the
+        // app know the current login status of the person.
+        // Full docs on the response object can be found in the documentation
+        // for FB.getLoginStatus().
+        if (response.status === 'connected') {
+            // Logged into your app and Facebook.
+            testAPI();
+        } else if (response.status === 'not_authorized') {
+            // The person is logged into Facebook, but not your app.
+            document.getElementById('status').innerHTML = 'Please log ' +
+                'into this app.';
+        } else {
+            // The person is not logged into Facebook, so we're not sure if
+            // they are logged into this app or not.
+            document.getElementById('status').innerHTML = 'Please log ' +
+                'into Facebook.';
+        }
+    }
+
+    // This function is called when someone finishes with the Login
+    // Button.  See the onlogin handler attached to it in the sample
+    // code below.
+    function checkLoginState() {
+        FB.getLoginStatus(function(response) {
+            statusChangeCallback(response);
+        });
+    }
+
+    window.fbAsyncInit = function() {
+        FB.init({
+            appId: 1630857077158355,
+            cookie: true, // enable cookies to allow the server to access 
+            // the session
+            xfbml: true, // parse social plugins on this page
+            version: 'v2.2' // use version 2.2
+        });
+
+        // Now that we've initialized the JavaScript SDK, we call 
+        // FB.getLoginStatus().  This function gets the state of the
+        // person visiting this page and can return one of three states to
+        // the callback you provide.  They can be:
+        //
+        // 1. Logged into your app ('connected')
+        // 2. Logged into Facebook, but not your app ('not_authorized')
+        // 3. Not logged into Facebook and can't tell if they are logged into
+        //    your app or not.
+        //
+        // These three cases are handled in the callback function.
+
+        FB.getLoginStatus(function(response) {
+            statusChangeCallback(response);
+        });
+
+    };
+
+    // Load the SDK asynchronously
+    (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s);
+        js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+
+    // Here we run a very simple test of the Graph API after login is
+    // successful.  See statusChangeCallback() for when this call is made.
+    function testAPI() {
+        console.log('Welcome!  Fetching your information.... ');
+        FB.api('/me', function(response) {
+            console.log('Successful login for: ' + response.name);
+            document.getElementById('status').innerHTML =
+                'Thanks for logging in, ' + response.name + '!';
+        });
+    }
+    </script>
     <header>
-      <a href="index.html" id="logo">
-        <h1>Ankit Sultana | bk2dcradle</h1>
-        <h2>Programmer</h2>
-      </a>
-      <nav>
-          <ul>
-            <li><a href="index.html" class="selected">Portfolio</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
-      </nav>
+        <a href="index.html" id="logo">
+            <h1>Ankit Sultana | bk2dcradle</h1>
+            <h2>Programmer</h2>
+        </a>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="selected">Portfolio</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
     </header>
     <div id="wrapper">
-      <section>
-          <h3>
+        <section>
+            <h3>
             Sport Programming
           </h3>
-        <section>
-          <h4>
+            <section>
+                <h4>
             SPOJ
           </h4>
-          <p>
-            Handle: bk2dcradle | Absolute Rank: 647
-          </p>
-        </section>
-        <section>
-          <h4>
+                <p>
+                    Handle: bk2dcradle | Absolute Rank: 647
+                </p>
+            </section>
+            <section>
+                <h4>
             TopCoder
           </h4>
-          <p>
-            Handle: bk2dcradle | Rating: 1152 (Green)
-          </p>
-        </section>
-        <section>
-          <h4>
+                <p>
+                    Handle: bk2dcradle | Rating: 1152 (Green)
+                </p>
+            </section>
+            <section>
+                <h4>
             CodeForces
           </h4>
-          <p>
-            Handle: bk2dcradle | Rating: 1659 (Blue)
-          </p>
-        </section>
-        <section>
-          <h4>
+                <p>
+                    Handle: bk2dcradle | Rating: 1659 (Blue)
+                </p>
+            </section>
+            <section>
+                <h4>
             HackerRank
           </h4>
-          <p>
-            Handle: bk2dcradle | Percentile: 93%
-          </p>
+                <p>
+                    Handle: bk2dcradle | Percentile: 93%
+                </p>
+            </section>
         </section>
-      </section>
-      <section>
-        <h3>
+        <section>
+            <h3>
           Python + Bash Scripting
         </h3>
-        <section>
-          <h4>
+            <section>
+                <h4>
             <a href="http://bk2dcradle.github.io/Sub-Downloader">Sub-Downloader</a>
           </h4>
-          <p>
-            Made a script for downloading Subtitles in <a>Python</a><br> and then
-            created a service using <a>automator</a>
-          </p>
-        </section>
-        <section>
-          <h4>
+                <p>
+                    Made a script for downloading Subtitles in <a>Python</a>
+                    <br> and then created a service using <a>automator</a>
+                </p>
+            </section>
+            <section>
+                <h4>
             <a href="http://github.com/bk2dcradle/BPL-Score-Updates">BPL-Score-Updates</a>
           </h4>
-          <p>
-            Wrote a simple script that scrapes a <a href="http://livescore.com/"><br>website</a>
-            to find the current score, and <br>displays a notification on OS X.
-            <br>Uses <a>AppleScript</a>, <a>Bash</a> script and a <a>Python</a> script.
-          </p>
+                <p>
+                    Wrote a simple script that scrapes a
+                    <a href="http://livescore.com/">
+                        <br>website</a>
+                    to find the current score, and
+                    <br>displays a notification on OS X.
+                    <br>Uses <a>AppleScript</a>, <a>Bash</a> script and a <a>Python</a> script.
+                </p>
+            </section>
         </section>
-      </section>
-      <footer>
-        <a href="http://facebook.com/ankitsultana10"><img src="assets/img/facebook-wrap.png" alt="Fb Logo" class="social-icon"></a>
-        <a href="http://twitter.com/AnkitSultana"><img src="assets/img/twitter-wrap.png" alt="Twitter Logo" class="social-icon"></a>
-        <a href="http://github.com/bk2dcradle"><img src="assets/img/github2.png" alt="" class="social-icon"></a>
-        <a href="http://facebook.com/ankitsultana10"><p>&copy; 2015 Ankit Sultana. </p></a>
-				<a href="http://easycounter.com/"><img src="http://www.easycounter.com/counter.php?bk2dcradle" border="0" alt="Free Hit Counter"></a>
-      </footer>
+        <footer>
+            <a href="http://facebook.com/ankitsultana10"><img src="assets/img/facebook-wrap.png" alt="Fb Logo" class="social-icon"></a>
+            <a href="http://twitter.com/AnkitSultana"><img src="assets/img/twitter-wrap.png" alt="Twitter Logo" class="social-icon"></a>
+            <a href="http://github.com/bk2dcradle"><img src="assets/img/github2.png" alt="" class="social-icon"></a>
+            <a href="http://facebook.com/ankitsultana10">
+                <p>&copy; 2015 Ankit Sultana. </p>
+            </a>
+            <a href="http://easycounter.com/"><img src="http://www.easycounter.com/counter.php?bk2dcradle" border="0" alt="Free Hit Counter"></a>
+            <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+            </fb:login-button>
+        </footer>
     </div>
-  </body>
+</body>
+
 </html>
