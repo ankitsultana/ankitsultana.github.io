@@ -11,8 +11,15 @@
 </head>
 
 <body>
-    <div id="status">
-            </div>
+    <div id="status"></div>
+		<div id="fb-root"></div>
+		<script>(function(d, s, id) {
+			  var js, fjs = d.getElementsByTagName(s)[0];
+				  if (d.getElementById(id)) return;
+					  js = d.createElement(s); js.id = id;
+						  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.3&appId=1630857077158355";
+							  fjs.parentNode.insertBefore(js, fjs);
+								}(document, 'script', 'facebook-jssdk'));</script>
     <script>
     // This is called with the results from from FB.getLoginStatus().
     function statusChangeCallback(response) {
@@ -182,6 +189,7 @@
             <a href="http://easycounter.com/"><img src="http://www.easycounter.com/counter.php?bk2dcradle" border="0" alt="Free Hit Counter"></a>
             <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
             </fb:login-button>
+						<div class="fb-share-button" data-href="http://bk2dcradle.github.io/" data-layout="button_count"></div>
         </footer>
     </div>
 </body>
