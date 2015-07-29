@@ -1,114 +1,382 @@
 <!DOCTYPE html>
+
 <html>
-
 	<head>
-		<meta charset="utf-8">
-		<meta name="title" content="Convolution Evolution">
-		<meta name="description" content="Home Page of bk2dcradle">
-		<link rel="image_src" href="http://github.com/bk2dcradle/bk2dcradle.github.io/blob/master/assets/img/github.png">
-		<link rel="stylesheet" href="assets/css/normalize.css">
-		<link rel="stylesheet" href="assets/css/main.css">
-		<link rel="stylesheet" href="assets/css/responsive.css">
-		<link href='http://fonts.googleapis.com/css?family=Lora:400,700|Montserrat:400,700' rel='stylesheet' type='text/css'>
-		<title>Ankit Sultana | bk2dcradle</title>
+		
+		<!-- Website Title & Description for Search Engine purposes -->
+		<title>bk2dcradle | Under Construction </title>
+		<meta name="description" content="">
+		
+		<!-- Mobile viewport optimized -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		
+		<!-- Bootstrap CSS -->
+		<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+		<link href="includes/css/bootstrap-glyphicons.css" rel="stylesheet">
+		
+		<!-- Custom CSS -->
+		<link href="includes/css/styles.css" rel="stylesheet">
+		
+		<!-- Include Modernizr in the head, before any other Javascript -->
+		<script src="includes/js/modernizr-2.6.2.min.js"></script>
+		
 	</head>
-
 	<body>
-		<!-- <div id="status"></div>	-->
-		<div id="fb-root"></div>
-		<script src="fb-share.js"></script>
-		<script src="fb-login.js"></script>
-		<header>
-		<a href="index.html" id="logo">
-			<h1>Ankit Sultana | bk2dcradle</h1>
-			<h2>Programmer</h2>
-		</a>
-		<nav>
-		<ul>
-			<li><a href="index.html" class="selected">Portfolio</a></li>
-			<li><a href="about.html">About</a></li>
-			<li><a href="contact.html">Contact</a></li>
-		</ul>
-		</nav>
-		</header>
-		<div id="wrapper">
-			<section>
-			<h3>
-				Sport Programming
-			</h3>
-			<section>
-			<h4>
-				SPOJ
-			</h4>
-			<p>
-			Handle: bk2dcradle | Absolute Rank: 647
-			</p>
-			</section>
-			<section>
-			<h4>
-				TopCoder
-			</h4>
-			<p>
-			Handle: bk2dcradle | Rating: 1152 (Green)
-			</p>
-			</section>
-			<section>
-			<h4>
-				CodeForces
-			</h4>
-			<p>
-			Handle: bk2dcradle | Rating: 1659 (Blue)
-			</p>
-			</section>
-			<section>
-			<h4>
-				HackerRank
-			</h4>
-			<p>
-			Handle: bk2dcradle | Percentile: 93%
-			</p>
-			</section>
-			</section>
-			<section>
-			<h3>
-				Python + Bash Scripting
-			</h3>
-			<section>
-			<h4>
-				<a href="http://bk2dcradle.github.io/Sub-Downloader">Sub-Downloader</a>
-			</h4>
-			<p>
-			Made a script for downloading Subtitles in <a>Python</a>
-			<br> and then created a service using <a>automator</a>
-			</p>
-			</section>
-			<section>
-			<h4>
-				<a href="http://github.com/bk2dcradle/BPL-Score-Updates">BPL-Score-Updates</a>
-			</h4>
-			<p>
-			Wrote a simple script that scrapes a
-			<a href="http://livescore.com/">
-				<br>website</a>
-			to find the current score, and
-			<br>displays a notification on OS X.
-			<br>Uses <a>AppleScript</a>, <a>Bash</a> script and a <a>Python</a> script.
-			</p>
-			</section>
-			</section>
-			<footer>
-			<a href="http://facebook.com/ankitsultana10"><img src="assets/img/facebook-wrap.png" alt="Fb Logo" class="social-icon"></a>
-			<a href="http://twitter.com/AnkitSultana"><img src="assets/img/twitter-wrap.png" alt="Twitter Logo" class="social-icon"></a>
-			<a href="http://github.com/bk2dcradle"><img src="assets/img/github2.png" alt="" class="social-icon"></a>
-			<a href="http://facebook.com/ankitsultana10">
-				<p>&copy; 2015 Ankit Sultana. </p>
-			</a>
-			<a href="http://easycounter.com/"><img src="http://www.easycounter.com/counter.php?bk2dcradle" border="0" alt="Free Hit Counter"></a>
-			<!-- fb:login-button scope="public_profile,email" onlogin="checkLoginState();" -->
-			<!--/fb:login-button --> 
-			<div class="fb-share-button" data-href="http://bk2dcradle.github.io/" data-layout="button_count"></div>
-			</footer>
-		</div>
-	</body>
+	
+		<div class="container" id="main">
 
+			<div class="navbar navbar-fixed-top">
+				<div class="container">
+
+					<button class="navbar-toggle" data-target=".navbar-responsive-collapse" data-toggle="collapse" type="button">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="http://bk2dcradle.github.io/"><img src="images/logo.png" width=110 height=28 alt="Your logo"></a>
+
+					<div class="nav-collapse collapse navbar-responsive-collapse">
+						<ul class="nav navbar-nav">
+							<li class="active">
+								<a href="#">Portfolio</a>
+							</li>
+							<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown"> Blog <!-- strong class="caret"></strong --></a>
+
+								<ul class="dropdown-menu">
+									<li>
+										<a href="#"> Web Design </a>
+									</li>
+
+									<li class="divider"></li>
+
+									<li class="dropdown-header">
+										More
+									</li>
+								</ul>
+							</li>
+						</ul>
+							<!-- form class="navbar-form pull-left">
+								<input type="text" class="form-control" placeholder="Search this site.." id="searchInput">
+								<button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button>
+							</form -->
+
+							<ul class="nav navbar-nav pull-right">
+								<li>
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"> Admin Login <strong class="caret">
+									</strong></a>
+										<ul class="dropdown-menu">
+											<li>
+												<a href="#"><span class="glyphicon glyphicon-wrench"></span> Login </a>
+											</li>
+										</ul>
+								</li>
+							</ul>
+					</div>
+				</div>
+
+			</div><!-- end navbar -->
+
+			<div class="carousel slide" id="myCarousel">
+
+				<!-- Indicators -->
+				<ol class="carousel-indicators">
+					<li class="active" data-slide-to="0" data-target="#myCarousel"></li>
+					<li data-slide-to="1" data-target="#myCarousel"></li>
+					<li data-slide-to="2" data-target="#myCarousel"></li>
+				</ol>
+
+				<div class="carousel-inner">
+					<div class="item active" id="slide1">
+						<div class="carousel-caption">
+							<h4> Bootstrap 3 </h4>
+							<p>Built using Bootstrap 3</p>
+						</div>
+					</div>
+					<div class="item" id="slide2">
+						<div class="carousel-caption">
+							<h4> Blog </h4>
+							<p>Convoluted Ramblings</p>
+						</div>
+					</div>
+					<div class="item" id="slide3">
+						<div class="carousel-caption">
+							<h4> Fun Fact</h4>
+							<p>A thumbs up has a pejorative meaning in some countries</p>
+						</div>
+					</div>
+				</div>
+
+				<!-- Controls -->
+				<a class="left carousel-control" data-slide="prev" href="#myCarousel">
+					<span class="icon-prev"></span>
+				</a>
+				<a class="right carousel-control" data-slide="next" href="#myCarousel">
+					<span class="icon-next"></span>
+				</a>
+			</div><!-- end myCarousel -->
+
+			<div class="row" id="bitCallout">
+				<div class="col-12">
+
+					<div class="alert alert-success alert-block fade in" id="successAlert">
+						<button type="button" class="close" data-dismiss="alert">&times;</button>
+
+						<h4>Success!</h4>
+						<p>Though my Resume is not worth uploading yet</p>
+					</div>
+
+					<!-- Visible only on small devices -->
+					<div class="well well-small visible-sm">
+						<a href="" class="btn btn-large btn-block btn-default"><span class="glyphicon glyphicon-phone"></span>Give me a call</a>
+					</div><!-- end well-small -->
+
+					<div class="well">
+						<div class="page-header">
+							<h2>Download Resume<small> |  Downloadable in pdf</small></h2>
+						</div>
+
+						<p class="lead"> Written entirely in LaTeX.</p>
+
+						<a href="" class="btn btn-large btn-primary" id="alertMe">Download in PDF</a>
+						<a href="" class="btn btn-large btn-link">View Code</a>
+					</div>
+				</div><!-- end col-12 -->
+			</div>
+			<div class="row" id="featuresHeading">
+				<div class="col-12">
+					<h2>Online Participation</h2>
+					<p class="lead">I practice for competitive programming online on various site. I also regularly contribute on GitHub. </p>
+				</div>
+			</div>
+
+			<div class="row" id="features">
+				<div class="col-sm-4 feature">
+					<div class="panel">
+						<div class="panel-heading">
+							<h3 class="panel-title">SPOJ</h3>
+						</div>
+						<img src="images/spoj_crap.png" height=200 width=200 alt="HTML5" class="img-circle">
+
+						<p>I have been active on this site for quite some time. Handle: <strong>bk2dcradle</strong></p>
+
+						<a href="" target="_blank" class="btn btn-warning btn-block">Spoj Ranking and Status</a>
+					</div>
+				</div>
+				<div class="col-sm-4 feature">
+					<div class="panel">
+						<div class="panel-heading">
+							<h3 class="panel-title">CodeChef</h3>
+						</div>
+						<img src="images/chef.png" width=200 height=200 alt="HTML5" class="img-circle">
+
+						<p>Regularly participate in Long and Short Contests. Handle: <strong>ankit1s10_3</strong></p>
+
+						<a href="" target="_blank" class="btn btn-danger btn-block">CodeChef Profile</a>
+					</div>
+				</div>
+				<div class="col-sm-4 feature">
+					<div class="panel">
+						<div class="panel-heading">
+							<h3 class="panel-title">GitHub</h3>
+						</div>
+						<img src="images/git_icon.png" width=200 height=200 alt="HTML5" class="img-circle">
+
+						<p>I frequently update my projects, like this site on Git. Handle: <strong>bk2dcradle</strong></p>
+
+						<a href="http://github.com/bk2dcradle/" target="_blank" class="btn btn-info btn-block">Check me out on GitHub</a>
+					</div>
+				</div>
+			</div>
+
+			<div class="row" id="moreInfo">
+				<div class="col-sm-6">
+					<h3>Python Scripting</h3>
+					<div class="tabbable">
+						<ul class="nav nav-tabs">
+							<li class="active"><a href="#tab1" data-toggle="tab"><span class="glyphicon glyphicon-bookmark"></span> Subtitle Downloader</a></li>
+							<li><a href="#tab2" data-toggle="tab">Score Prompt</a></li>
+						</ul>
+						<div class="tab-content">
+							<div class="tab-pane active" id="tab1">
+								<h4> Sub-Downloader <small>OS X Service to download Subtitles </small></h4>
+								<iframe width="100%" height="330" src="https://www.youtube.com/embed/liR8XFMTtA0" frameborder="0" allowfullscreen></iframe>
+								<p>Installation Instructions and Code is available on <a href="http://github.com/bk2dcradle/Sub-Downloader">GitHub</a> .</p>
+							</div>
+							<div class="tab-pane" id="tab2">
+								<h4>A left floated picture <small> Using placehold</small></h4>
+								<img src="http://placehold.it/140" class="thumbnail pull-left">
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+								<hr>
+
+								<a href="#myModal" role="button" class="btn btn-warning" data-toggle="modal"> <span class="glyphicon glyphicon-hand-up"></span>Click for a modal window </a>
+
+								<div class="modal fade" id="myModal">
+									<div class="modal-dialog">
+										<div class="modal-content">
+											<div class="modal-header">
+												<button class="close" data-dismiss="modal">&times;</button>
+
+												<h4 class="modal-title">Some shit</h4>
+											</div><!-- end modal header -->
+											<div class="modal-body">
+												<h4>Text in a modal</h4>
+												<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiu</p>
+
+												<h4>Popovers in a modal</h4>
+												<a href="#" class="btn btn-danger pop" data-toggle="popover" data-placement="top" data-original-title="You clicked it" data-content="What a fag">Don't click this button</a>
+
+												<h4>Tooltips in a modal</h4>
+												<a href="#" data-original-title="Tooltip" rel="tooltip">This link</a> should have a tooltip, and so should <a href="#" data-original-title="Wooohoo!" rel="tooltip"> this one</a>
+
+												<hr>
+
+												<p><small class="text-muted">PS this form doesn't do anything.. just a heads up</small></p>
+
+												<form class="form-horizontal">
+													<div class="form-group">
+														<label class="col-lg-2 control-label" for="inputName">Name</label>
+														<div class="col-lg-10">
+															<input class="form-control" type="text" id="inputName" placeholder="Name" />
+														</div>
+													</div>
+													<div class="form-group">
+														<label class="col-lg-2 control-label" for="inputEmail">Email</label>
+														<div class="col-lg-10">
+															<input class="form-control" type="email" id="inputEmail" placeholder="Email" />
+														</div>
+													</div>
+													<div class="form-group">
+														<label class="col-lg-2 control-label" for="inputMessage">Message</label>
+														<div class="col-lg-10">
+															<textarea class="form-control" id="inputMessage" placeholder="Message" rows="3"></textarea>
+															<button class="btn btn-success pull-right" type="submit">Send</button>
+														</div>
+													</div>
+												</form>
+
+											</div><!-- end modal body -->
+											<div class="modal-footer">
+												<button class="btn btn-default" data-dismiss="modal" type="button"> Close </button>	<button class="btn btn-primary" type="button">Some more stuff</button>
+											</div><!-- end modal-footer -->
+										</div>
+									</div>
+								</div><!-- end myModal -->
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-sm-6">
+					<h3>Competitive Programming</h3>
+					<p>I spend most of my time solving problems. For practice I used to use spoj, but now I have moved on to codechef and CodeForces.</p>
+
+					<h4>List of Contest sites</h4>
+					<div class="list-group">
+						<a target="_blank" href="http://spoj.com/users/bk2dcradle/" class="list-group-item">
+							<h4 class="list-group-item-heading">Spoj</h4>
+							<p class="list-group-item-text">Handle: <strong>bk2dcradle</strong> |  World Rank: #604 | Problems Solved: 343</p>
+						</a>
+						<a target="_blank" href="http://codeforces.com/profile/bk2dcradle" class="list-group-item">
+							<h4 class="list-group-item-heading">CodeForces</h4>
+							<p class="list-group-item-text">Handle: <strong>bk2dcradle</strong> | Rating: Upper-Blue</p>
+						</a>
+						<a target="_blank" href="http://codechef.com/users/ankit1s10_3" class="list-group-item">
+							<h4 class="list-group-item-heading">Codechef</h4>
+							<p class="list-group-item-text">Handle: <strong>ankit1s10_3</strong> | Country Rank: #897 </p>
+						</a>
+					</div><!-- end list-group -->
+
+					<h4>Small heading</h4>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+				</div>
+			</div>
+
+			<hr />
+			
+			<div class="row" id="moreCourses">
+				<div class="col-12">
+					<h3>From my Blog</h3>
+					<div class="thumbnails row">
+						<div class="col-6" id="blognail1">
+							<div class="thumbnail">
+								<img src="images/VimLarge.png" alt="Web Hosting 101">
+
+								<div class="caption">
+									<h3>Vim: From zero to hero</h3>
+									<p>Learn how to Vim from scratch</p>
+									<p><a href="http://bk2dcradle.github.io/" class="btn btn-primary btn-small" target="_blank">Read On</a> <a href="http://google.com/" target="_blank" class="btn btn-small btn-link">Learn more</a></p>
+								</div>
+							</div><!-- end thumbnail -->
+						</div>
+						<div class="col-6 blognail" id="blognail2">
+							<div class="thumbnail">
+								<img src="images/css3.jpg" alt="Web Hosting 101">
+
+								<div class="caption">
+									<h3>CSS3: Getting Started with Web Dev</h3>
+									<p>Learn how to publish your own website live in no time with this web hosting blah blah</p>
+									<p><a href="http://bk2dcradle.github.io/" class="btn btn-primary btn-small" target="_blank">Read On</a> <a href="http://google.com/" target="_blank" class="btn btn-small btn-link">Learn more</a></p>
+								</div>
+							</div><!-- end thumbnail -->
+						</div>
+					</div>
+				</div>
+			</div><!-- end moreCourses -->
+		</div><!-- end div container -->
+
+		<footer>
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-2">
+						<h6>Copyright &copy; 2015 </h6>
+					</div><!-- end col-sm-2 -->
+					<div class="col-sm-4">
+						<h6>About me</h6>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+					</div><!-- end col-sm-4 -->
+					<div class="col-sm-2">
+						<h6>Navigation</h6>
+						<ul class="list-unstyled">
+							<li><a href="#">Home</a></li>
+							<li><a href="#">Services</a></li>
+							<li><a href="#">Links</a></li>
+							<li><a href="#">Contact</a></li>
+						</ul>
+					</div><!-- end col-sm-2 -->
+					<div class="col-sm-2">
+						<h6>Follow Me</h6>
+						<ul class="list-unstyled">
+							<li><a href="http://twitter.com/AnkitSultana/">Twitter</a></li>
+							<li><a href="http://facebook.com/ankitsultana10/">Facebook</a></li>
+							<li><a href="http://github.com/bk2dcradle/">GitHub</a></li>
+							<li><a href="https://plus.google.com/u/0/+AnkitSultana10/posts">Google+</a></li>
+						</ul>
+					</div><!-- end col-sm-2 -->
+					<div class="col-sm-2">
+						<h6>Coded with Bootstrap 3 <span class="glyphicon glyphicon-heart"></span></h6>
+					</div>
+				</div>
+			</div><!-- end footer-container -->
+		</footer>
+
+
+	<!-- All Javascript at the bottom of the page for faster page loading -->
+		
+	<!-- First try for the online version of jQuery-->
+	<script src="http://code.jquery.com/jquery.js"></script>
+	
+	<!-- If no online access, fallback to our hardcoded version of jQuery -->
+	<script>window.jQuery || document.write('<script src="includes/js/jquery-1.8.2.min.js"><\/script>')</script>
+	
+	<!-- Bootstrap JS -->
+	<script src="bootstrap/js/bootstrap.min.js"></script>
+	
+	<!-- Custom JS -->
+	<script src="includes/js/script.js"></script>
+	
+	</body>
 </html>
+
