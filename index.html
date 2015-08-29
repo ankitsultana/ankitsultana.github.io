@@ -22,9 +22,9 @@
 		
 	</head>
 	<body>
-	
 		<div class="container" id="main">
 
+			<!-- Begin navbar -->
 			<nav class="navbar navbar-default navbar-fixed-top">
 				<div class="container">
 					<div class="navbar-header">
@@ -41,10 +41,6 @@
 							<li>
 								<a href="http://bk2dcradle.github.io/Blog/">Blog</a>
 							</li>
-							<li>
-							<a href="http://bk2dcradle.github.io/Blog" class="dropdown-toggle" data-toggle="dropdown"> Blog <!-- strong class="caret"></strong --></a>
-
-							</li>
 						</ul>
 						<ul class="nav navbar-nav navbar-right">
 							<li class="active">
@@ -55,13 +51,13 @@
 				</div><!-- End container -->
 			</nav><!-- end navbar -->
 
+			<!-- Begin Carousel -->
 			<div class="carousel slide" id="myCarousel">
 
 				<!-- Indicators -->
 				<ol class="carousel-indicators">
 					<li class="active" data-slide-to="0" data-target="#myCarousel"></li>
 					<li data-slide-to="1" data-target="#myCarousel"></li>
-					<li data-slide-to="2" data-target="#myCarousel"></li>
 				</ol>
 
 				<div class="carousel-inner">
@@ -78,12 +74,6 @@
 							<p>Convoluted Ramblings</p>
 						</div>
 						</a>
-					</div>
-					<div class="item" id="slide3">
-						<div class="carousel-caption">
-							<h4> Fun Fact</h4>
-							<p>A thumbs up has a pejorative meaning in some countries</p>
-						</div>
 					</div>
 				</div>
 
@@ -111,28 +101,28 @@
 						<a href="" class="btn btn-large btn-block btn-default"><span class="glyphicon glyphicon-phone"></span>Give me a call</a>
 					</div><!-- end well-small -->
 
-					<div class="well">
+					<div class="well well-lg">
 						<div class="page-header">
 							<h2>Download Resume<small> |  Downloadable in pdf</small></h2>
 						</div>
 
 						<p class="lead"> Written entirely in LaTeX.</p>
 
-						<a href="" class="btn btn-large btn-primary" id="alertMe">Download in PDF</a>
-						<a href="" class="btn btn-large btn-link">View Code</a>
-					</div>
+						<a href="" class="btn btn-lg btn-primary" id="alertMe">Download in PDF</a>
+						<a href="" class="btn btn-lg btn-link">View Code</a>
+					</div><!-- end well large -->
 				</div><!-- end col-12 -->
-			</div>
-			<div class="row" id="featuresHeading">
+			</div><!-- End Callout -->
+			<div class="row" id="features-heading">
 				<div class="col-12">
 					<h2>Online Participation</h2>
 					<p class="lead">I practice for competitive programming online on various site. I also regularly contribute on GitHub. </p>
 				</div>
-			</div>
+			</div><!-- End featuresHeading -->
 
 			<div class="row" id="features">
 				<div class="col-sm-4 feature">
-					<div class="panel">
+					<div class="panel panel-default">
 						<div class="panel-heading">
 							<h3 class="panel-title">SPOJ</h3>
 						</div>
@@ -141,14 +131,14 @@
 						<p>I have been active on this site for quite some time. Handle: <strong>bk2dcradle</strong></p>
 
 						<a href="" target="_blank" class="btn btn-warning btn-block">Spoj Ranking and Status</a>
-					</div>
-				</div>
+					</div><!-- End SPOJ panel -->
+				</div><!-- end Column -->
 				<div class="col-sm-4 feature">
-					<div class="panel">
+					<div class="panel panel-default">
 						<div class="panel-heading">
 							<h3 class="panel-title">CodeChef</h3>
 						</div>
-						<img src="images/chef.png" width=200 height=200 alt="HTML5" class="img-circle">
+						<img src="images/chef.png" width=200 height=200 alt="HTML5" class="img-circle prog-sites">
 
 						<p>Regularly participate in Long and Short Contests. Handle: <strong>ankit1s10_3</strong></p>
 
@@ -156,7 +146,7 @@
 					</div>
 				</div>
 				<div class="col-sm-4 feature">
-					<div class="panel">
+					<div class="panel panel-default">
 						<div class="panel-heading">
 							<h3 class="panel-title">GitHub</h3>
 						</div>
@@ -169,6 +159,7 @@
 				</div>
 			</div>
 
+			<hr>
 			<div class="row" id="moreInfo">
 				<div class="col-sm-6">
 					<h3>Python Scripting</h3>
@@ -277,10 +268,10 @@
 			<hr />
 			
 			<div class="row" id="moreCourses">
-				<div class="col-12">
+				<div class="col-lg-12">
 					<h3>From my Blog</h3>
 					<div class="thumbnails row">
-						<div class="col-6" id="blognail1">
+						<div class="col-lg-6" id="blognail1">
 							<div class="thumbnail">
 								<img src="images/VimLarge.png" alt="Web Hosting 101">
 
@@ -291,13 +282,13 @@
 								</div>
 							</div><!-- end thumbnail -->
 						</div>
-						<div class="col-6 blognail" id="blognail2">
+						<div class="col-lg-6" id="blognail2">
 							<div class="thumbnail">
 								<img src="images/css3.jpg" alt="Web Hosting 101">
 
 								<div class="caption">
 									<h3>CSS3: Getting Started with Web Dev</h3>
-									<p>Learn how to publish your own website live in no time with this web hosting blah blah</p>
+									<p>Learn how to publish your own website live in no time with this web hosting blah</p>
 									<p><a href="http://bk2dcradle.github.io/" class="btn btn-primary btn-small" target="_blank">Read On</a> <a href="http://google.com/" target="_blank" class="btn btn-small btn-link">Learn more</a></p>
 								</div>
 							</div><!-- end thumbnail -->

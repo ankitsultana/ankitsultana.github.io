@@ -2,11 +2,6 @@
    Custom 
    -------------------------------------- */
 
-/*.btn:hover{
-	color: #428BCA;
-	background-color: #FFFFFF;
-}*/
-
 body {
 	/* background-color: #297AA3; */
 }
@@ -19,12 +14,32 @@ body {
 	margin-right: 10px;
 }
 
-/* body {
-	background-image: url("./../../images/background_img.png");
-	background-repeat: no-repeat;
-	background-position: center bottom;
-}	*/
+.panel-heading {
+	padding-right: 0px;  
+	padding-left: 0px;  
+	width: 100%;
+}
 
+.btn-block {
+	text-align: center;
+	margin-bottom: 20px;
+	margin-left: 2px;
+	width: 99%;
+}
+
+#features-heading {
+	margin-left: 5px;
+	margin-right: 5px;
+}
+
+.thumbnails {
+	width: 100%;
+	overflow: hidden;
+}
+
+.thumbnail > img {
+	width: 100%;
+}
 
 /* --------------------------------------
    Layout
@@ -35,7 +50,7 @@ body {
 }
 
 #features img {
-	margin: 0 0 20px;
+	margin: 20px 10px;
 }
 
 #inputMessage {
@@ -80,13 +95,12 @@ body {
 	padding: 9px 15px;
 }
    
-   
 /* --------------------------------------
    Carousel
    -------------------------------------- */
 
 #myCarousel {
-	margin-top: 60px;
+	margin-top: 51px;
 }
 
 .carousel-caption {
@@ -122,7 +136,10 @@ body {
 }
 
 .well {
-	margin: 20px 0;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	margin-right: 15px;
+	margin-left: 15px;
 }
 
 .tabbable img.thumbnail {
@@ -169,10 +186,6 @@ body {
 		background: url('../../images/carousel_small_02.jpg') top center no-repeat;
 	}
 
-	#slide3 {
-		background: url('../../images/carousel_small_03.jpg') top center no-repeat;
-	}
-
 	.carousel-caption {
 		font-size: 16px;
 	}
@@ -194,9 +207,4 @@ body {
 	#slide2 {
 		background: url('../../images/carousel_large_02.jpg') top center no-repeat;
 	}
-
-	#slide3 {
-		background: url('../../images/carousel_large_03.jpg') top center no-repeat;
-	}
-
 }
