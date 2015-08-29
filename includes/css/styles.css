@@ -2,6 +2,12 @@
    Custom 
    -------------------------------------- */
 
+.nav li {
+	font-family: 'Lora', sans-serif, monospace;  
+	font-size: 20px;
+	color: #404040;
+}
+
 .list-group-item: hover {
 	background-color: #46B8DA;
 }
