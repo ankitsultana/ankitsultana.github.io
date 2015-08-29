@@ -2,10 +2,6 @@
    Custom 
    -------------------------------------- */
 
-body {
-	/* background-color: #297AA3; */
-}
-
 .list-group-item: hover {
 	background-color: #46B8DA;
 }
@@ -39,6 +35,10 @@ body {
 
 .thumbnail > img {
 	width: 100%;
+}
+
+#from-blog {
+	margin-left: 20px;  
 }
 
 /* --------------------------------------
