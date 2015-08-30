@@ -39,6 +39,16 @@
 	overflow: hidden;
 }
 
+.thumbnails {
+	margin-left: 0px;
+	margin-right: 0px;
+}
+
+.thumbnail {
+	margin-left: 0px;
+	margin-right: 0px;
+}
+
 .thumbnail > img {
 	width: 100%;
 }
@@ -150,10 +160,6 @@ body {
 
 .tabbable img.thumbnail {
 	margin: 0 20px 10px 0;
-}
-
-.thumbnails {
-	margin: 20px 0;
 }
 
 .thumbnail {
