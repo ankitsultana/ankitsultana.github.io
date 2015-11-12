@@ -136,6 +136,11 @@ header:hover {
 		margin-right: 30px;
 		-webkit-transition: 0.2s ease;
 	}
+
+	.fancy-hr {
+		display: block;  
+		-webkit-transition: 0.3s ease;
+	}
 }
 
 @media (max-width: 480px) {
@@ -154,11 +159,6 @@ header:hover {
 
 	h2 {
 		font-size: 25px;
-	}
-
-	.fancy-hr {
-		display: block;  
-		-webkit-transition: 0.3s ease;
 	}
 }
 
