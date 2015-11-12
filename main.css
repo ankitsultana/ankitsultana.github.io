@@ -1,0 +1,170 @@
+/* GENERAL
+ * * * * * * * * * * * * * * * * */
+body {
+	background: #FFFEFB;
+	font-family: 'Lato', sans-serif;  
+	font-weight: 300;
+	font-size: 18px;
+	color: #333333;
+	overflow-x: hidden;
+	margin-top: 0px;
+}
+
+li {
+	margin-top: 3px;
+	margin-bottom: 3px;
+}
+
+a {
+	text-decoration: none;  
+	color: #E22C29;
+}
+
+a:hover {
+	text-decoration: underline;  
+}
+
+h2 {
+	margin: 3px;  
+}
+
+h3 {
+	font-family: 'Open Sans', sans-serif;  
+	font-size: 20px;
+	margin: 0 0 0px 10px;
+}
+
+hr {
+	margin: 5px 10px 5px 10px;
+	font-family: 'Open Sans';
+	background: #EEEEEE;
+	color: #EEEEEE;
+	border: 0;
+    height: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+#topmost-hr {
+	margin: 0px 10px 0px 10px;
+	background-color: #E22C29;
+}
+
+.fancy-hr {
+	padding: 0;
+    border: none;
+    border-top: medium double #333;
+    color: #333;
+	margin-bottom: 30px;
+    text-align: center;
+	display: none;
+}
+.fancy-hr:after {
+	content: "§";
+    display: inline-block;
+    position: relative;
+    top: -0.7em;
+    font-size: 1.5em;
+    padding: 0 0.25em;
+    background: white;  
+}
+
+header {
+	text-align: center;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 30px;
+	color: #E22C29;
+}
+
+header:hover {
+	text-decoration: underline;  
+	color: #E22C29;
+}
+
+::selection {
+  background: #F29131; 
+  color: #FFF;
+}
+
+::-moz-selection {
+  background: #F29131;
+  color: #FFF;
+}
+
+/* Structural CSS 
+ * * * * * * * * * * * * * * * * */
+
+.left-column {
+	float: left;
+	display: inline-block;
+	margin-left: 30px;
+	width: 55%;
+}
+
+.right-column {
+	float: right;
+	display: inline-block;
+	margin: 0 30px 10px 0;
+	width: 35%;
+	overflow-x: hidden;
+}
+
+.right-column > p {
+	margin-left: 20px;
+}
+
+/* Media Queries
+ * * * * * * * * * * */
+
+@media (max-width: 800px) {
+	#resume-header {
+		font-size: 25px;
+		-webkit-transition: 0.2s ease;
+	}
+
+	.left-column {
+		width: 100%;  
+		margin-right: 30px;
+		margin-left: 15px;
+	}
+
+	.right-column {
+		float: none;  
+		display: block;
+		width: 100%;
+		margin-left: 15px;
+		margin-right: 30px;
+		-webkit-transition: 0.2s ease;
+	}
+}
+
+@media (max-width: 480px) {
+	#resume-header {
+		font-size: 20px;  
+		-webkit-transition: 0.2s ease;
+	}
+
+	.left-column {
+		margin-left: 5px;  
+	}
+
+	.right-column {
+		margin-left: 5px;  
+	}
+
+	h2 {
+		font-size: 25px;
+	}
+
+	.fancy-hr {
+		display: block;  
+		-webkit-transition: 0.3s ease;
+	}
+}
+
+@media (min-width: 1200px) {
+	#resume-header {
+		font-size: 30px;
+		-webkit-transition: 0.2s ease;
+	}
+}
