@@ -82,13 +82,13 @@ header:hover {
 }
 
 ::selection {
-  background: #F29131; 
-  color: #FFF;
+  background: #FDF4B6; 
+  color: #424242;
 }
 
 ::-moz-selection {
-  background: #F29131;
-  color: #FFF;
+  background: #FDF4B6;
+  color: #424242;
 }
 
 /* Structural CSS 
