@@ -1,7 +1,7 @@
 /* GENERAL
  * * * * * * * * * * * * * * * * */
 body {
-	background: #FFFEFB;
+	background: #F5F3EE;
 	font-family: 'Lato', sans-serif;  
 	font-weight: 300;
 	font-size: 18px;
@@ -17,11 +17,13 @@ li {
 
 a {
 	text-decoration: none;  
-	color: #E22C29;
+	color: #7D1935;
 }
 
 a:hover {
-	text-decoration: underline;  
+	color: #4A96AD;
+	-webkit-transition: 0.3s ease;
+			transition: 0.3s ease;
 }
 
 h2 {
@@ -47,7 +49,7 @@ hr {
 
 #topmost-hr {
 	margin: 0px 10px 0px 10px;
-	background-color: #E22C29;
+	background-color: #7D1935;
 }
 
 .fancy-hr {
@@ -66,19 +68,20 @@ hr {
     top: -0.7em;
     font-size: 1.5em;
     padding: 0 0.25em;
-    background: white;  
+    background: #F5F3EE;  
 }
 
 header {
 	text-align: center;
 	font-family: 'Open Sans', sans-serif;
 	font-size: 30px;
-	color: #E22C29;
+	color: #7D1935;
 }
 
 header:hover {
-	text-decoration: underline;  
-	color: #E22C29;
+	color: #4A96AD;
+	-webkit-transition: 0.3s ease;
+			transition: 0.3s ease;
 }
 
 ::selection {
@@ -112,6 +115,13 @@ header:hover {
 .right-column > p {
 	margin-left: 20px;
 }
+
+/* Custom
+ * * * * * * * * * * */
+
+/* header:hover {
+	text-decoration: none;
+} */
 
 /* Media Queries
  * * * * * * * * * * */
