@@ -2,7 +2,7 @@
 
 A Super Light weight (< 20Kb), mobile-friendly Resume.
 
-Uses NO Javascript, just plain HTML, CSS.
+Uses NO Javascript (except Google Analytics, but hey!), just plain HTML, CSS.
 
 ####Usage
 
