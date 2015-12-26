@@ -17,7 +17,7 @@ Uses NO Javascript (except Google Analytics, but hey!), just plain HTML, CSS.
 
 #### Usage
 
-* If you want to use version two/three, go [here](https://github.com/bk2dcradle/bk2dcradle.github.io/releases), download source code as mentioned below:
+* If you want to use version two/three, go [here](https://github.com/bk2dcradle/bk2dcradle.github.io/releases), download source code from the tag mentioned below:
 
       Version Name | Download from Tag   |
       -------------|---------------------|
