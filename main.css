@@ -41,7 +41,6 @@ h3 {
 	font-family: 'Source Sans Pro', 'Lato';
 	font-size: 20px;
 	margin: 0 0 0px 10px;
-	color: #F0F0F0;
 }
 
 hr {
@@ -86,9 +85,9 @@ header {
 	color: #535353;
 	font-weight: 300;
 }
-header strong {
-	color: #333333;  
-	font-weight: 600;
+header span {
+	color: #ddd;
+	font-weight: 300;
 }
 
 header:hover {
