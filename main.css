@@ -1,9 +1,33 @@
 /* GENERAL
  * * * * * * * * * * * * * * * * */
+footer {
+	display: block;
+	width: 100%;  
+	color: #D4D4D4;
+}
+footer a {
+	color: #D4D4D4;
+}
+#attribution {
+	float: left;
+}
+#github-credit {
+	float: right;  
+}
+#footer-line {
+	border: 0.1px solid #f0f0f0;
+	background: #f0f0f0;
+	margin: 0;
+	width: 1000%;
+	margin-left: -500%;
+	padding: 0;
+}
+
 body {
 	background: #FFF;
 	font-family: 'Source Sans Pro', sans-serif;  
 	font-weight: 300;
+	padding: 0;
 	font-size: 18px;
 	color: #333333;
 	overflow-x: hidden;
@@ -181,6 +205,14 @@ header:hover {
 
 	h2 {
 		font-size: 25px;
+	}
+	#attribution {
+		float: none;
+		text-align: center;
+	}
+	#github-credit {
+		float: none;
+		text-align: center;
 	}
 }
 
