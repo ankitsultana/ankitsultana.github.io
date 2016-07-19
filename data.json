@@ -1,7 +1,24 @@
 {
     "data": [
-           ["Hi!", "I love crap"],
-           ["Algorithmic Programming", "Do this a lot"],
+           ["Hi!", "I am a third year student of Computer Science at Birla Institute of Technology and Science, Pilani"],
+           ["Algorithmic Programming", "I do this a lot, more than a lot. I am active on almost all major websites like codeforces, topcoder etc. thanks to which I have a strong grasp on Algorithms and Data Structures."],
            ["Electron", "Was the first one to discover electron"]
+    ],
+    "menu": [
+    {
+        "name": "Dragand",
+        "desc": "/ web application",
+        "link": "#"
+    },
+    {
+        "name": "Rugby",
+        "desc": "/ sport",
+        "link": "#"
+    },
+    {
+        "name": "Nicole criosfsoq",
+        "desc": "/ artist",
+        "link": "#"
+    }
     ]
 }

@@ -30,10 +30,13 @@
 		<link rel="icon" type="image/ico" href="images/favicon.ico">
 		<link rel="shortcut-icon" type="image/ico" href="images/favicon.ico">
         <link rel="stylesheet" href="fonts/fontello/css/fontello.css">
+        <link rel="stylesheet" href="./bin/animate.css">
+        <link rel="stylesheet" href="./fonts/font-awesome/css/font-awesome.min.css" type="text/css">
 
 		<!-- Main CSS -->
 		<link rel="stylesheet" href="main.css">
         <script src="./bin/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+        <!--<script src="./anime/anime.min.js" type="text/javascript" charset="utf-8"></script>-->
         <script src="script.js" type="text/javascript" charset="utf-8"></script>
 	</head>
 	<body>
@@ -42,28 +45,47 @@
                 <a href="https://twitter.com/AnkitSultana">Ankit Sultana</a>
             </div>
             <div class="right navbar">
-                <a class="active" href="https://twitter.com/AnkitSultana">About</a>
-                <p>/</p>
-                <a href="https://twitter.com/AnkitSultana">Blog</a>
-                <p>/</p>
-                <a href="https://twitter.com/AnkitSultana">Resume</a>
+                <a class="home-layer active" href="https://twitter.com/AnkitSultana">About</a>
+                <p class="home-layer">/</p>
+                <a class="home-layer" href="https://twitter.com/AnkitSultana">Blog</a>
+                <p class="home-layer">/</p>
+                <a class="home-layer" href="https://twitter.com/AnkitSultana">Resume</a>
+                <i id="overlay-toggle" class="fa fa-chevron-left"></i>
             </div>
             <div style="clear:both"></div>
         </nav>
-        <div id="arrow-container">
+        <div id="overlay">
+            <nav id="project_list_nav">
+                <ul id="project_list">
+                    <!--<li class="project_list_el">-->
+                        <!--<a href="#"><p>Dragand</p></a>-->
+                        <!--<span>/ web application</span>-->
+                    <!--</li>-->
+                    <!--<li class="project_list_el">-->
+                        <!--<a href="#"><p>Rugby</p></a>-->
+                        <!--<span>/ sport</span>-->
+                    <!--</li>-->
+                    <!--<li class="project_list_el">-->
+                        <!--<a href="#"><p>Nicole Criosdfsd</p></a>-->
+                        <!--<span>/ artist</span>-->
+                    <!--</li>-->
+                </ul>
+            </nav>
+        </div>
+        <div class="home-layer" id="arrow-container">
             <i class="icon-up-open"></i>
             <i class="icon-down-open"></i>
         </div>
-        <div id="content-container">
+        <div class="home-layer" id="content-container">
             <div id="header-container">
                 <!--<h1>Algorithmic Programming</h1>-->
-                <h1 id="heading"></h1>
+                <a href="#" class="animated fadeInLeft" id="testing"></a><h1 id="heading"></h1>
             </div>
             <div id="text-container">
                 <p id="text"></p>
             </div>
         </div>
-        <div id="page-number-container">
+        <div class="home-layer" id="page-number-container">
             <!--<div id="pager-0" class="pager"></div>-->
             <!--<div id="pager-1" class="pager"></div>-->
             <!--<div id="pager-2" class="pager-active"></div>-->
