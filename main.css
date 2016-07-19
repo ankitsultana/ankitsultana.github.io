@@ -70,11 +70,13 @@ nav .right {
     color: #0760FE;
     -webkit-transition: 0.3s ease;
     transform: translate(0, 3px);
+    cursor: pointer;
 }
 #arrow-container .icon-down-open:hover {
     color: #0760FE;
     -webkit-transition: 0.3s ease;
     transform: translate(0, -3px);
+    cursor: pointer;
 }
 
 #content-container {
