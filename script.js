@@ -20,8 +20,12 @@ xhr.open('GET', url + 'data.json', true)
 xhr.send()
 
 function setData (idx) {
-  $('#heading').text(jsondata['data'][idx][0])
-  $('#text').text(jsondata['data'][idx][1])
+  $('#heading').fadeOut(function () {
+    $('#heading').text(jsondata['data'][idx][0]).fadeIn()
+  })
+  $('#text').fadeOut(function () {
+    $('#text').text(jsondata['data'][idx][1]).fadeIn()
+  })
 }
 
 function addMenu (size) {
@@ -34,7 +38,11 @@ function setMenu (idx) {
   var url = jsondata['menu'][idx]['link']
   var nm = jsondata['menu'][idx]['name']
   var desc = jsondata['menu'][idx]['desc']
-  $('#project_list').append('<li class="project_list_el"><a href="' + url + '"><p>' + nm + '</p></a><span>' + desc + '</span></li>')
+  var b = ''
+  if (jsondata['menu'][idx]['leave']) {
+    b = '<i class="fa fa-long-arrow-right"></i>'
+  }
+  $('#project_list').append('<li class="project_list_el"><a href="' + url + '"><p>' + nm + '</p></a><span>' + desc + ' ' + b + '</span></li>')
 }
 
 function addPagers (size) {
