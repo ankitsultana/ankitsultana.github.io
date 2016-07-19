@@ -60,18 +60,27 @@ var b = true
 
 $(document).ready(function () {
   setData(0)
-  $('#overlay').hide()
+  $('.overlay').hide()
   $('#overlay-toggle').on('click', function (e) {
-    console.log('clicked')
     if (b) {
-      $('.home-layer').fadeOut()
-      $('#overlay').show()
+      $('.home-layer').fadeOut(function () {
+      })
+      $('#overlay-toggle').fadeOut(function () {
+        $(this).text('     back').fadeIn()
+      })
+      $('.overlay').fadeIn('slow', function () {
+      })
       $('.project_list_el').removeClass('fadeOut')
       $('.project_list_el').addClass('animated fadeInLeft')
       // $('.project_list_el').fadeIn('slow')
     } else {
+      $('#overlay-toggle').fadeOut(function () {
+        $(this).text('').fadeIn()
+        $(this).append('<i class="fa fa-bars"></i>').fadeIn()
+      })
       $('.home-layer').fadeIn('slow')
-      $('#overlay').fadeOut('slow')
+      $('.overlay').fadeOut('slow', function () {
+      })
       $('.project_list_el').removeClass('fadeInLeft')
       $('.project_list_el').addClass('fadeOut')
     }
