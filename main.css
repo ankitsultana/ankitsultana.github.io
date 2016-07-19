@@ -64,9 +64,28 @@ nav .right {
 #arrow-container i {
     display: block;
     margin: 5px;
+    -webkit-transition: 0.3s ease;
 }
-#arrow-container i:hover {
+#arrow-container .icon-up-open:hover {
+    color: #0760FE;
+    -webkit-transition: 0.3s ease;
+    transform: translate(0, 3px);
 }
+#arrow-container .icon-down-open:hover {
+    color: #0760FE;
+    -webkit-transition: 0.3s ease;
+    transform: translate(0, -3px);
+}
+
+#content-container {
+    position: absolute;
+    top: 48%;
+    left: 15%;
+}
+
+/*
+ * Page Number Stuff
+ */
 #page-number-container {
     width: 30px;
     position: absolute;
@@ -96,4 +115,5 @@ nav .right {
     margin: 3px;
     width: 100px;
     -webkit-transition: 0.3s ease;
+    cursor: pointer;
 }
