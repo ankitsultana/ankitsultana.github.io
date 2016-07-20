@@ -35,7 +35,7 @@ body {
     position: relative;
 }
 nav {
-    padding: 1.0em 3.0em 0em 0.7em;
+    padding: 1.0em 2.0em 0em 0.7em;
     font-size: 20px;
 }
 .navbar {
@@ -89,6 +89,9 @@ nav .right {
     left: 15%;
     max-width: 50%;
 }
+#heading {
+    font-size: 32px;
+}
 #text {
     font-size: 20px;
 }
@@ -115,6 +118,7 @@ nav .right {
     background: #18212D;
     opacity: 0.9;
     transition: 1s ease;
+    overflow-y: hidden;
 }
 #overflow nav {
     padding: 0px 1000px;
@@ -123,10 +127,22 @@ nav .right {
 #project_list_nav {
     padding: 100px;
 }
+#ac_project_list_nav {
+    padding: 100px;
+}
 #project_list {
     list-style-type: none;
 }
+#ac_project_list {
+    list-style-type: none;
+}
+
 .project_list_el {
+    margin: 20px 0;
+    -webkit-transition: 0.6s ease;
+    border-left: 0px solid #0760FE;
+}
+.ac_project_list_el {
     margin: 20px 0;
     -webkit-transition: 0.6s ease;
     border-left: 0px solid #0760FE;
@@ -135,7 +151,14 @@ nav .right {
     color: inherit;
     margin-left: 10px;
 }
+.ac_project_list_el a {
+    color: inherit;
+    margin-left: 10px;
+}
 .project_list_el a:hover p {
+    color: #0760FE;
+}
+.ac_project_list_el a:hover p {
     color: #0760FE;
 }
 .project_list_el:hover {
@@ -143,10 +166,22 @@ nav .right {
     color: #0760FE;
     -webkit-transition: 0.6s ease;
 }
+.ac_project_list_el:hover {
+    border-left: 10px solid #0760FE;
+    color: #0760FE;
+    -webkit-transition: 0.6s ease;
+}
 .project_list_el span {
     font-size: 20px;
 }
+.ac_project_list_el span {
+    font-size: 20px;
+}
 .project_list_el p {
+    display: inline-block;
+    font-size: 35px;
+}
+.ac_project_list_el p {
     display: inline-block;
     font-size: 35px;
 }
@@ -186,4 +221,56 @@ nav .right {
     -webkit-transition: 0.3s ease;
     -moz-transition: 0.3s ease;
     cursor: pointer;
+}
+
+/*
+ * Mobile
+ */
+
+@media (max-width: 500px) {
+    html, body {
+        height: 100%;
+    }
+    nav {
+        padding-right: 1em;
+        padding-left: .5em;
+    }
+    .pager {
+        width: 30px;
+    }
+    .pager-active {
+        width: 50px;
+    }
+    .pager:hover {
+        width: 50px;
+    }
+    #heading {
+        font-size: 28px;
+    }
+    #text {
+        font-size: 18px;
+    }
+    #content-container {
+        position: absolute;
+        top: 35%;
+        left: 20%;
+        max-width: 50%;
+    }
+    #project_list_nav {
+        padding: 100px 10px;
+    }
+    .project_list_el span {
+        font-size: 18px;
+    }
+    .project_list_el p {
+        display: inline-block;
+        font-size: 25px;
+    }
+    .ac_project_list_el span {
+        font-size: 18px;
+    }
+    .ac_project_list_el p {
+        display: inline-block;
+        font-size: 25px;
+    }
 }
