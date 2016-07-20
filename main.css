@@ -231,6 +231,10 @@ nav .right {
     html, body {
         height: 100%;
     }
+    #arrow-container {
+        left: 5%;
+        top: 43%;
+    }
     nav {
         padding-right: 1em;
         padding-left: .5em;
