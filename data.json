@@ -38,7 +38,7 @@
             "leave": true
         },
         {
-            "name": "subtitle downloader",
+            "name": "sub downloader",
             "desc": " / macOS service",
             "link": "https://github.com/bk2dcradle/subtitle-downloader",
             "leave": true

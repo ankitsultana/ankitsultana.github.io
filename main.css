@@ -266,6 +266,9 @@ nav .right {
         display: inline-block;
         font-size: 25px;
     }
+    #ac_project_list_nav {
+        padding: 100px 10px;
+    }
     .ac_project_list_el span {
         font-size: 18px;
     }
