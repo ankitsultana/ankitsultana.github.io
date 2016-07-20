@@ -23,6 +23,25 @@
         "desc": " / web version",
         "link": "#",
         "leave": true
-    }
+    }],
+    "projects": [
+        {
+            "name": "jade resume",
+            "desc": " / write resume in jade",
+            "link": "https://github.com/bk2dcradle/jade-resume",
+            "leave": true
+        },
+        {
+            "name": "accent",
+            "desc": " / jekyll theme",
+            "link": "https://ankitsultana.me/accent",
+            "leave": true
+        },
+        {
+            "name": "subtitle downloader",
+            "desc": " / macOS service",
+            "link": "https://github.com/bk2dcradle/subtitle-downloader",
+            "leave": true
+        }
     ]
 }

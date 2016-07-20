@@ -6,7 +6,7 @@ var jsondata = {
 var totalPosts = 0
 var totalMenu = 0
 var currPost = 0
-var url = 'https://ankitsultana.me/' // http://127.0.0.1:8080/'
+var url = 'https://ankitsultana.me'
 var xhr = new XMLHttpRequest()
 xhr.onload = function () {
   jsondata = JSON.parse(xhr.responseText)
@@ -16,6 +16,7 @@ xhr.onload = function () {
   addMenu(totalMenu)
   focusPager(0)
   setData(0)
+  setProjects()
 }
 xhr.open('GET', url + 'data.json', true)
 xhr.send()
@@ -59,6 +60,21 @@ function unfocusPager (idx) {
   $(id).removeClass('pager-active')
   // $(id).addClass('pager')
 }
+function setProjects () {
+  for (var i = 0; i < jsondata['projects'].length; i++) {
+    addProject(i)
+  }
+}
+function addProject (idx) {
+  var nm = jsondata['projects'][idx]['name']
+  var url = jsondata['projects'][idx]['link']
+  var desc = jsondata['projects'][idx]['desc']
+  var b = ''
+  if (jsondata['projects'][idx]['leave']) {
+    b = '<i class="fa fa-long-arrow-right"></i>'
+  }
+  $('#ac_project_list').append('<li class="ac_project_list_el"><a href="' + url + '"><p>' + nm + '</p></a><span>' + desc + ' ' + b + '</span></li>')
+}
 
 function changeTo (idx) {
   if (idx === currPost) {
@@ -71,12 +87,23 @@ function changeTo (idx) {
 }
 
 var b = true
+var p = false
 
 $(document).ready(function () {
   setData(0)
   $('.overlay').hide()
+  $('#ac-projects-container').hide()
   $('#overlay-toggle').on('click', function (e) {
-    if (b) {
+    if (p) {
+      p = false
+      $('#ac-projects-container').fadeOut('slow')
+      $('.ac_project_list_el').removeClass('fadeInLeft')
+      $('.ac_project_list_el').addClass('fadeOut')
+      $('.overlay').fadeIn('slow', function () {
+      })
+      $('.project_list_el').removeClass('fadeOut')
+      $('.project_list_el').addClass('animated fadeInLeft')
+    } else if (b) {
       $('.home-layer').fadeOut(function () {
       })
       $('#overlay-toggle').fadeOut(function () {
@@ -87,6 +114,7 @@ $(document).ready(function () {
       $('.project_list_el').removeClass('fadeOut')
       $('.project_list_el').addClass('animated fadeInLeft')
       // $('.project_list_el').fadeIn('slow')
+      b ^= true
     } else {
       $('#overlay-toggle').fadeOut(function () {
         $(this).text('').fadeIn()
@@ -97,8 +125,17 @@ $(document).ready(function () {
       })
       $('.project_list_el').removeClass('fadeInLeft')
       $('.project_list_el').addClass('fadeOut')
+      b ^= true
     }
-    b ^= true
+  })
+  $(document).on('click', 'a', function (e) {
+    if ($(this).text() === 'Projects') {
+      p = true
+      $('.overlay').fadeOut()
+      $('#ac-projects-container').fadeIn('slow')
+      $('.ac_project_list_el').removeClass('fadeOut')
+      $('.ac_project_list_el').addClass('animated fadeInLeft')
+    }
   })
   $('.icon-up-open').on('click', function (e) {
     changeTo((currPost - 1 + totalPosts) % totalPosts)
