@@ -15,6 +15,7 @@ xhr.onload = function () {
   addPagers(totalPosts)
   addMenu(totalMenu)
   focusPager(0)
+  setData(0)
 }
 xhr.open('GET', url + 'data.json', true)
 xhr.send()
@@ -27,13 +28,11 @@ function setData (idx) {
     $('#text').text(jsondata['data'][idx][1]).fadeIn()
   })
 }
-
 function addMenu (size) {
   for (var i = 0; i < size; i++) {
     setMenu(i)
   }
 }
-
 function setMenu (idx) {
   var url = jsondata['menu'][idx]['link']
   var nm = jsondata['menu'][idx]['name']
@@ -44,24 +43,31 @@ function setMenu (idx) {
   }
   $('#project_list').append('<li class="project_list_el"><a href="' + url + '"><p>' + nm + '</p></a><span>' + desc + ' ' + b + '</span></li>')
 }
-
 function addPagers (size) {
   for (var i = 0; i < size; i++) {
     var id = 'pager-' + i
     $('#page-number-container').append('<div id=' + id + ' class="pager"></div>')
   }
 }
-
 function focusPager (idx) {
   var id = '#pager-' + idx
-  $(id).removeClass('pager')
+  // $(id).removeClass('pager')
   $(id).addClass('pager-active')
 }
-
 function unfocusPager (idx) {
   var id = '#pager-' + idx
   $(id).removeClass('pager-active')
-  $(id).addClass('pager')
+  // $(id).addClass('pager')
+}
+
+function changeTo (idx) {
+  if (idx === currPost) {
+    return false
+  }
+  unfocusPager(currPost)
+  currPost = idx
+  setData(idx)
+  focusPager(currPost)
 }
 
 var b = true
@@ -95,15 +101,13 @@ $(document).ready(function () {
     b ^= true
   })
   $('.icon-up-open').on('click', function (e) {
-    unfocusPager(currPost)
-    currPost = (currPost - 1 + totalPosts) % totalPosts
-    focusPager(currPost)
-    setData(currPost)
+    changeTo((currPost - 1 + totalPosts) % totalPosts)
   })
   $('.icon-down-open').on('click', function (e) {
-    unfocusPager(currPost)
-    currPost = (currPost + 1) % totalPosts
-    focusPager(currPost)
-    setData(currPost)
+    changeTo((currPost + 1) % totalPosts)
+  })
+  $(document).on('click', '.pager', function (e) {
+    var id = $(this).attr('id').substr($(this).attr('id').length - 1)
+    changeTo(id)
   })
 })
