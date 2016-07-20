@@ -1,0 +1,28 @@
+{
+    "data": [
+           ["Hi!", "I am a third year student of Computer Science at Birla Institute of Technology and Science, Pilani"],
+           ["Algorithmic Programming", "I do this a lot. I am active on almost all major websites like codeforces, topcoder etc. thanks to which I have a strong grasp on Algorithms and Data Structures."],
+           ["Snackdown 2016 Onsite", "Was among the top 25 teams in Snackdown 2016 elimination round."],
+           ["Development", "I have done some micro projects from time to time, full list can be found here"]
+    ],
+    "menu": [
+    {
+        "name": "Projects",
+        "desc": " / listicle",
+        "link": "#",
+        "leave": false
+    },
+    {
+        "name": "Blog",
+        "desc": " / convoluted ramblings",
+        "link": "#",
+        "leave": true
+    },
+    {
+        "name": "Resume",
+        "desc": " / web version",
+        "link": "#",
+        "leave": true
+    }
+    ]
+}
