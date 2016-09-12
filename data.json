@@ -34,13 +34,13 @@
         {
             "name": "accent",
             "desc": " / jekyll theme",
-            "link": "https://ankitsultana.me/accent",
+            "link": "http://ankitsultana.me/accent",
             "leave": true
         },
         {
             "name": "sub downloader",
             "desc": " / macOS service",
-            "link": "https://github.com/bk2dcradle/subtitle-downloader",
+            "link": "http://github.com/bk2dcradle/subtitle-downloader",
             "leave": true
         }
     ]
