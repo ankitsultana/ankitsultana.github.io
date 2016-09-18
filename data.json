@@ -15,13 +15,13 @@
     {
         "name": "Blog",
         "desc": " / convoluted ramblings",
-        "link": "#",
+        "link": "http://ankitsultana.me/blog/",
         "leave": true
     },
     {
         "name": "Resume",
-        "desc": " / web version",
-        "link": "#",
+        "desc": " / pdf",
+        "link": "http://ankitsultana.me/resume/ankit-sultana-resume.pdf",
         "leave": true
     }],
     "projects": [
