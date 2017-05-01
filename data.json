@@ -15,13 +15,13 @@
     {
         "name": "Blog",
         "desc": " / convoluted ramblings",
-        "link": "http://ankitsultana.me/blog/",
+        "link": "http://ankitsultana.com/blog/",
         "leave": true
     },
     {
         "name": "Resume",
         "desc": " / pdf",
-        "link": "http://ankitsultana.me/resume/ankit-sultana-resume.pdf",
+        "link": "http://ankitsultana.com/resume/ankit-sultana-resume.pdf",
         "leave": true
     }],
     "projects": [
@@ -34,7 +34,7 @@
         {
             "name": "accent",
             "desc": " / jekyll theme",
-            "link": "http://ankitsultana.me/accent",
+            "link": "http://ankitsultana.com/accent",
             "leave": true
         },
         {
