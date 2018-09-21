@@ -1,9 +1,15 @@
 {
     "data": [
-           ["Hi!", "I don't maintain this page anymore."],
-           ["CPSIG", "I am currently conducting programming contests/lectures in my college."]
+           ["Hi!", "I am a Software Engineer working at Uber."],
+		   ["Abandoned", "I have stopped maintaining this site since more than a year"]
     ],
     "menu": [
+    {
+        "name": "CPSIG",
+        "desc": " / programming resources",
+        "link": "https://ankitsultana.com/bits-cpsig",
+        "leave": true
+    },
     {
         "name": "Projects",
         "desc": " / listicle",
@@ -26,19 +32,19 @@
         {
             "name": "jade resume",
             "desc": " / write resume in jade",
-            "link": "https://github.com/bk2dcradle/jade-resume",
+            "link": "https://github.com/ankitsultana/jade-resume",
             "leave": true
         },
         {
-            "name": "accent",
+            "name": "researcher",
             "desc": " / jekyll theme",
-            "link": "http://ankitsultana.com/accent",
+            "link": "https://github.com/ankitsultana/researcher",
             "leave": true
         },
         {
             "name": "sub downloader",
             "desc": " / macOS service",
-            "link": "http://github.com/bk2dcradle/subtitle-downloader",
+            "link": "http://github.com/ankitsultana/subtitle-downloader",
             "leave": true
         }
     ]
