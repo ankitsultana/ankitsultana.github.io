@@ -6,7 +6,7 @@ layout: default
 
 <ul class="related-posts">
 
-{% assign blog_posts = site.posts | where: 'book', nil %}
+{% assign blog_posts = site.posts | where: 'blog_post', true %}
 {% for post in blog_posts %}
     <li class="main-page-list">
         <h4>

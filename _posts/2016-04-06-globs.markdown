@@ -2,6 +2,7 @@
 title: Glob Patterns
 layout: default
 tags: [shell, miscellaneous]
+blog_post: true
 ---
 
 According to wikipedia, glob patterns specify sets of filenames with wild card
