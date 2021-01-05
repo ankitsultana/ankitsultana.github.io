@@ -19,6 +19,6 @@ nav:
   - name: "About"
     link: "/"
   - name: "Blog"
-    link: "/blog/"
+    link: "/blog"
   - name: "Reading"
     link: "/books"
