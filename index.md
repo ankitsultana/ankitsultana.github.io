@@ -15,7 +15,7 @@ I am currently working as a software engineer at Uber which takes up most of my 
 
 <ul class="related-posts">
 
-{% assign blog_posts = site.posts | where: 'book', nil %}
+{% assign blog_posts = site.posts | where: 'blog_post', true %}
 {% for post in blog_posts limit:3 %}
     <li class="main-page-list">
         <h4>
