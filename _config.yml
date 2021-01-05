@@ -1,0 +1,24 @@
+title: Ankit Sultana
+url: "https://ankitsultana.com"
+baseurl: ""
+
+markdown: kramdown
+#ins_logo: "./bits-logo.png"
+
+tracking_id: #
+
+footer: yes
+footer_url: "https://github.com/ankitsultana/ankitsultana.github.io"
+footer_text: "This page is under-construction. Please check back around late-Jan."
+
+sass:
+  style: compressed
+  sass_dir: _sass
+
+nav:
+  - name: "About"
+    link: "/"
+  - name: "Blog"
+    link: "/blog/"
+  - name: "Reading"
+    link: "/books"

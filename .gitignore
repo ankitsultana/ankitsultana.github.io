@@ -1,1 +1,6 @@
-/GimpMain/*
+_site
+.sass-cache
+.sass-cache/
+.jekyll-cache/
+.DS_Store
+.vscode
