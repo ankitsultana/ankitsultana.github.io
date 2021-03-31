@@ -9,7 +9,7 @@ tracking_id: UA-69243698-4
 
 footer: yes
 footer_url: "https://github.com/ankitsultana/ankitsultana.github.io"
-footer_text: "This page is under-construction. Please check back later."
+footer_text: "This is a custom-built theme for Jekyll. Please report any issues on GitHub."
 
 sass:
   style: compressed
