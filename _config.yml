@@ -11,6 +11,9 @@ footer: yes
 footer_url: "https://github.com/ankitsultana/ankitsultana.github.io"
 footer_text: "This is a custom-built theme for Jekyll. Please report any issues on GitHub."
 
+favicon: true
+favicon_location: "images/favicon.png"
+
 sass:
   style: compressed
   sass_dir: _sass
