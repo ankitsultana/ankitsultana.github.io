@@ -9,8 +9,10 @@ blog_post: true
 
 <div class="callout">
 <b>Prerequisites</b>: Should have a good understanding of Treaps (both Vanilla / BST  and Implicit), along with some basic understanding of BSTs and Segment Trees.
-You can refer to the following tutorials: <a href="https://tanujkhattar.wordpress.com/2016/01/10/treaps-one-tree-to-rule-em-all-part-1/">Vanilla Treaps as BST</a>, 
-<a href="https://tanujkhattar.wordpress.com/2016/01/10/treaps-one-tree-to-rule-em-all-part-2/">Implicit Treaps.</a>
+I had given a <a href="https://slides.com/ankitsultana/persistent-treaps">presentation at work</a> which can serve as a good starting point.
+You can also refer to the following tutorials: <a href="https://tanujkhattar.wordpress.com/2016/01/10/treaps-one-tree-to-rule-em-all-part-1/">Vanilla Treaps as BST</a>,
+<a href="https://tanujkhattar.wordpress.com/2016/01/10/treaps-one-tree-to-rule-em-all-part-2/">Implicit Treaps</a>,
+or the original <a href="https://faculty.washington.edu/aragon/pubs/rst89.pdf">research paper.</a>
 </div>
 
 If you are familiar with Treaps in Competitive Programming context, you'd know that there are two main operations that a Treap
