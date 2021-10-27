@@ -7,6 +7,9 @@
 // @import url('https://fonts.googleapis.com/css2?family=Noto+Sans&family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans&family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
 
+@import "typography";
+@import "tables";
+
 
 // Noto Sans. 
 $body-font: "Noto Sans";
@@ -113,6 +116,9 @@ hr {
     .navbar-ul {
         margin-top: 5px;
     }
+    .content .callout {
+        font-size: 17px;
+    }
 }
 
 @media (max-width: 500px) {
@@ -124,6 +130,9 @@ hr {
 		width: 100%;
 		float: none;
 	}
+    .content .callout {
+        font-size: 16px;
+    }
 	#navlist {
 		padding: 10px 0 10px 0;
 		margin: 0;
@@ -142,6 +151,3 @@ hr {
 		margin: 0;
 	}
 }
-
-@import "typography";
-@import "tables";
