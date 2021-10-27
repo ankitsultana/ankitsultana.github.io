@@ -22,9 +22,11 @@ I am currently working as a software engineer at Uber which takes up most of my 
             <div style="display: inline-block; width: 90px">
                 <small>{{ post.date | date: "%Y-%m-%d" }}</small>
             </div>
-            <a class="una" href="{{ site.baseurl }}{{ post.url }}">
-                <span>{{ post.title }}</span>
-            </a>
+            <div id="main-page-blogs-list">
+                <a class="una" href="{{ site.baseurl }}{{ post.url }}">
+                    <span>{{ post.title }}</span>
+                </a>
+            </div>
         </h4>
     </li>
     {% if forloop.last %}</ul>{% endif %}

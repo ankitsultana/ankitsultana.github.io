@@ -99,6 +99,9 @@ hr {
 	max-height: 100px;
 	text-align: center;
 }
+#main-page-blogs-list {
+    display: inline-block;
+}
 
 /* Mobile */
 
@@ -122,6 +125,9 @@ hr {
 }
 
 @media (max-width: 500px) {
+    #main-page-blogs-list {
+        display: block;
+    }
 	.navbar {
 		text-align: center;
 		padding: 50px 0px 0px 0px;
