@@ -22,7 +22,7 @@ I am currently working as a software engineer at Uber which takes up most of my 
             <div style="display: inline-block; width: 90px">
                 <small>{{ post.date | date: "%Y-%m-%d" }}</small>
             </div>
-            <a href="{{ site.baseurl }}{{ post.url }}">
+            <a class="una" href="{{ site.baseurl }}{{ post.url }}">
                 <span>{{ post.title }}</span>
             </a>
         </h4>
@@ -39,7 +39,7 @@ I am currently working as a software engineer at Uber which takes up most of my 
 {% for post in book_reviews limit:7 %}
     <li class="main-page-list">
         <h4>
-        <a href="{{ post.goodreads_url }}">
+        <a class="una" href="{{ post.goodreads_url }}">
             <span>{{ post.title }}</span>
         </a>
             <small>by {{ post.author }}.</small>

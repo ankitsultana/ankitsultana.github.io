@@ -5,9 +5,11 @@
         font-weight: lighter;
     }
     .callout {
-        background: #f0f0f0;
+        // background: #6FA8DC;
         padding: 20px;
-        font-size: 15px;
+        padding-left: 30px;
+        font-size: 18px;
+        border-left: solid 10px #EFD6C5;
     }
     .main-page-list {
         font-size: 18px;
@@ -17,9 +19,16 @@
     .main-page-list small {
         font-weight: lighter;
     }
+    a {
+        text-decoration: underline;
+        text-decoration-thickness: 2px;
+    }
     a:hover {
         text-decoration: underline;
         text-decoration-thickness: 2px;
+    }
+    .una {
+        text-decoration: none;
     }
     ol {
         counter-reset: list;

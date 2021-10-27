@@ -13,7 +13,7 @@ layout: default
             <div style="display: inline-block; width: 90px">
                 <small>{{ post.date | date: "%Y-%m-%d" }}</small>
             </div>
-        <a href="{{ site.baseurl }}{{ post.url }}">
+        <a class="una" href="{{ site.baseurl }}{{ post.url }}">
             <span>{{ post.title }}</span>
         </a>
         </h4>

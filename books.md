@@ -27,7 +27,7 @@ as well.
             <div style="display: inline-block; width: 90px">
                 <small>{{ post.date | date: "%Y-%m-%d" }}</small>
             </div>
-        <a href="{{ site.baseurl }}{{ post.url }}">
+        <a class="una" href="{{ site.baseurl }}{{ post.url }}">
             <span>{{ post.title }}</span>
         </a>
         </h4>
@@ -45,7 +45,7 @@ as well.
 {% for post in blog_posts %}
         <li class="main-page-list">
             <h4>
-            <a href="{{ post.goodreads_url }}">
+            <a class="una" href="{{ post.goodreads_url }}">
                 <span>{{ post.title }}</span>
             </a>
                 <small>by {{ post.author }}.</small>
@@ -70,7 +70,7 @@ as well.
                 <small>{{ post.date | date: "%Y-%m-%d" }}</small>
             </div>
             <div>
-            <a href="{{ post.goodreads_url }}">
+            <a class="una" href="{{ post.goodreads_url }}">
                 <span>{{ post.title }}.</span>
             </a>
             <small>by {{ post.author }}.</small>
