@@ -7,7 +7,7 @@ blog_post: true
 
 ## Java Concurrent HashMap Overhead
 
-Today I was wondering whether there may exist an easy optimization for improving the memory usage for Apache Pinot's
+Today I was wondering if there exists an easy optimization for improving the memory usage for Apache Pinot's
 Upsert feature. 
 
 ### Context
