@@ -39,12 +39,13 @@ correctness issues due to hash-collision.
 
 To estimate how much I might be able to optimize the memory overhead in CHP, I ran a test where I stored a bunch of (key, value)
 pairs in a CHP, and for comparison I also ran a test where I stored the same objects in vanilla Arrays and ArrayLists.
-Based on those, I found that **CHP adds a ~15% memory overhead** when compared with vanilla Array and ArrayLists.
+Based on those, I found that **CHP adds only a ~15% memory overhead** when compared with vanilla Array and ArrayLists.
 Note that we can't meet the same functional requirements using Array/ArrayList, but the purpose of using them was
 to find the least amount of memory I'll need to simply store the keys and values.
 
 Moreover, the memory usage for a HashMap was roughly the same as that for a CHP, implying that CHP has a very low overhead
-over a HashMap.
+over a HashMap. Given this small overhead, it doesn't seem worthwhile to optimize the memory usage further by
+using a different data-structure.
 
 For the tests, I used POJOs which resemble the ones used by Pinot for storing Upsert metadata, however the tests don't really
 rely on any special properties of the POJOs since the memory numbers are supposed to be assessed relative to each other.
