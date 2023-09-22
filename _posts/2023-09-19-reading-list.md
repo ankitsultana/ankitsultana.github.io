@@ -8,8 +8,8 @@ blog_post: true
 
 ## Database Reading List
 
-I started reading DB and Systems related literature in June'2023, and I try to keep this page
-updated with some of the papers, blogs and talks I found interesting. The more recently read
+I started reading DB and Systems related literature in June'23, and I try to keep this page
+updated with some of the papers, blogs and talks I found interesting. More recently read
 papers should be at the top, but often I catalog some old papers just to make sure I actually
 remember what they were about.
 
@@ -25,7 +25,7 @@ A Deep Dive into Common Open Formats for Analytical DBMSs. <a href="https://arxi
 
 This paper analyzes three popular open formats: ORC, Parquet and Arrow, and compares results across many relevant
 factors: compression ratios at data-type level, transcoding throughput, query performance, etc. The paper also goes
-deep into why a certain format does/does-not perform well for certain benchmarks. There's too many great results
+deep into why a certain format does/does-not perform well for certain benchmarks. There are too many great results
 shared in the paper to be included in a brief description and I found myself highlighting a significant chunk of
 the paper, but I can share three which I found most relevant for myself: 1) Parquet has better disk size compression
 than ORC 2) ORC has better query performance 3) Both ORC and Parquet automatically switch from dict encoding to
@@ -38,7 +38,7 @@ Better bitmap performance with Roaring bitmaps. <a href="https://arxiv.org/pdf/1
 </div>
 
 Roaring is one of the most commonly used bitmap implementations: it is used in Pinot, Druid, Spark, M3, etc. Roaring can be used
-as a bitmap for 2<sup>32</sup> elements. It partitions the range of all elements into chunks of 2<sup>16</sup>, with each chunk
+as a bitmap for ~2<sup>32</sup> elements. It partitions the range of all elements into chunks of 2<sup>16</sup>, with each chunk
 sharing the 16 MSBs. When a chunk contains <4096 elements, it is stored as a sorted array of 2<sup>16</sup> bit integers. Otherwise,
 a bitmap is used. The paper also shares the algorithms used for union and intersection, and compares the performance of Roaring
 with other Bitmap implementations (BitSet, Concise, WAH).
