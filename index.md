@@ -5,9 +5,11 @@ layout: main
 ## About
 
 Hi! I am Ankit and welcome to this ever so unkempt corner of the internet that is my blog.
-You can find my incoherent ramblings about things like books, tech, music, etc.
+You can find my incoherent ramblings about things like databases, books, etc. here.
 
 I am currently working as a software engineer at Uber which takes up most of my weekdays.
+I recently built an interest in Databases and you may see a bunch of related posts here.
+I am also on X: [@hungryankit](http://x.com/hungryankit)
 
 ---
 
