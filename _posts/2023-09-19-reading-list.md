@@ -20,6 +20,32 @@ Please report errors [on GitHub](https://github.com/ankitsultana/ankitsultana.gi
 ---
 
 <div class="paper-desc">
+The Log-Structured Merge-Tree (LSM-Tree). <a href="https://www.cs.umb.edu/~poneil/lsmtree.pdf">link</a>
+</div>
+
+This seminal paper from the 90s introduced what would become the foundation of many NoSQL and KV databases.
+Highlights of the paper (for me) were: 1) the motivation for this was to support indexing for use-cases with
+high-write throughput 2) key difference with B-Trees was the approach to buffer writes in-memory and flush
+to the first level after a threshold is reached 3) the mathematical proof for the theorem that states that
+for a given largest-component size of a LSM Tree with some given ingestion rate, the total page I/O rate
+to perform all merges is minimized when the ratios between consecutive components is a common value. In other
+words, the component sizes should form a geometric progression.
+
+To be honest, I didn't go super deep into this paper and I hope to do that once I implement a LSM Tree
+in Zig/Rust later.
+
+On a related note, there are a ton of resources online for LSM Trees from some of the most popular DBs.
+This talk [by Igor and Mark](https://www.youtube.com/watch?v=jGCv4r8CJEI) from Facebook explains the high-level
+design for RocksDB really well. [TigerBeetle](https://docs.tigerbeetle.com/internals/lsm) folks have notes to
+make it easy to understand their LSM code. Neon also has their own implementation which is briefly talked 
+about [in this talk](https://www.youtube.com/watch?v=rES0yzeERns).
+
+**Digression**: In programming competitions, the concept of leveraging powers of two is extremely common in certain 
+data-structures and algorithms. Examples: Heavy Light Decomposition, [Sparse Table / RMQ / Tree LCA](https://www.topcoder.com/thrive/articles/Range%20Minimum%20Query%20and%20Lowest%20Common%20Ancestor), etc.
+
+---
+
+<div class="paper-desc">
 A Deep Dive into Common Open Formats for Analytical DBMSs. <a href="https://arxiv.org/pdf/1402.6407.pdf">link</a>
 </div>
 
