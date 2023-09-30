@@ -15,7 +15,33 @@ remember what they were about.
 
 Please report errors [on GitHub](https://github.com/ankitsultana/ankitsultana.github.io).
 
-### Recommended
+### Log
+
+---
+
+<div class="paper-desc">
+Velox: Meta's Unified Execution Engine <a href="https://vldb.org/pvldb/vol15/p3372-pedreira.pdf">link</a>
+</div>
+
+Velox made a big splash last year and it definitely marks a new phase in large scale database systems.
+Velox is a pluggable, modular vectorized execution engine that can be plugged into many Data Processing Systems.
+Meta in their paper confirmed that they have used it in around a dozen systems:
+Presto, Spark, XStream (their Flink equivalent?), etc. The paper also mentions that many companies have
+already started using Velox, and it was also discussed in CMU's
+[Advanced Databases Course](https://www.youtube.com/watch?v=Zx4caucPF7s) this year.
+
+At a minimum Velox's benefits are three-fold: 1) Written in C++, it is a execution engine that can be optimized
+for the latest industry hardware 2) Existing systems like Presto can get 2-10x speedup based on the workload
+3) Being pluggable it can be used across many systems.
+
+For me the highlights of the paper were: 1) Velox uses the StringView representation presented in
+[Umbra](https://db.in.tum.de/~freitag/papers/p29-neumann-cidr20.pdf) which differs from Arrow. 2) To optimize
+for branch prediction failures, they create a bitmask out of the condition and subsequently process each
+branch in a vectorised manner (I suspect this may be slower for some workloads) 3) If a deterministic
+function is run on dictionary encoded input then only the distinct values can be transformed to their new
+values (aka Peeling). 4) Velox's execution framework is based on Tasks, supports pausing execution via
+a process wide memory arbiter and leverages memory pools for larger objects such as hash-tables for
+locality and avoiding fragmentation (I didn't get how they avoid fragmentation).
 
 ---
 
