@@ -20,6 +20,30 @@ Please report errors [on GitHub](https://github.com/ankitsultana/ankitsultana.gi
 ---
 
 <div class="paper-desc">
+Umbra: A Disk-Based System with In-Memory Performance <a href="https://www.cidrdb.org/cidr2020/papers/p29-neumann-cidr20.pdf">link</a>
+</div>
+
+If you look at [the publications](https://umbra-db.com/#publications) section of Umbra's website,
+you'll find that most of the papers seem really amazing and interesting. There's a lot of really cool work being done at
+[TUM](https://www.tum.de/en/). Umbra is the successor to HyPer, which was a database optimized for in-memory workloads.
+
+This paper though short is really dense with content. Some highlights: 1) They use Morsel based execution
+(which they developed as part of HyPer), and they are able to pause queries in high load scenarios.
+2) Their Buffer manager uses variable sized pages, which is implemented using anonymous mmap. They use madv_dontneed
+when the page needs to be evicted. 3) Reads/Writes are using pread/pwrite. 4) Pointer swizzling via swips allows them to
+avoid the necessity of having a PID to Page hash-table. This creates a problem during page eviction since multiple
+swips may point to the same page. To solve this, they ensure that no two swips can point to the same page. This
+also means that all their data structures have to be trees.
+
+There's also a talk by Thomas in the [CMU DB group](https://www.youtube.com/watch?v=pS2_AJNIxzU) which is quite
+informative. Some interesting highlights from that for me were: 1) Thomas mentioned that a big part of why Umbra was able to
+beat HyPer in terms of performance was because of better statistics thanks to Reservoir Sampling during inserts and
+HLL for column cardinality estimation. 2) They didn't use LLVM IR and instead went ahead with their own lightweight
+implementation, which can do compilation for a query with 2k+ table joins in ~30ms.
+
+---
+
+<div class="paper-desc">
 Velox: Meta's Unified Execution Engine <a href="https://vldb.org/pvldb/vol15/p3372-pedreira.pdf">link</a>
 </div>
 
