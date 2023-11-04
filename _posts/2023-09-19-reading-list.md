@@ -119,8 +119,7 @@ sharing the 16 MSBs. When a chunk contains <4096 elements, it is stored as a sor
 a bitmap is used. The paper also shares the algorithms used for union and intersection, and compares the performance of Roaring
 with other Bitmap implementations (BitSet, Concise, WAH).
 
-One important thing to understand about the Roaring design is: it doesn't use RLE and is instead designed for optimized
-random reads. WAH and Concise can give better compression when there are long runs of consecutive values in the dataset.
+~~One important thing to understand about the Roaring design is: it doesn't use RLE and is instead designed for optimized random reads. WAH and Concise can give better compression  when there are long runs of consecutive values in the dataset.~~ [see Errata #1]
 
 Moreover, for low cardinality random set of integers, it is [2-3x worse](https://github.com/ankitsultana/weekend/tree/main/roaring/src/main/java/com/ankitsultana/experiments) in terms of size (vs if you were to store the set as
 a array of 4-byte integers directly). The paper also calls it out and they do mention that for density lower than 0.1% a
@@ -214,3 +213,9 @@ already.
 One final note on the Ottertune blog: as they have called out, Postgres is still quite an amazing choice particularly for
 use-cases that are not write heavy (has a ton of extensions, query throughput/latency can be 
 [better than MySQL](http://smalldatum.blogspot.com/2023/01/the-insert-benchmark-on-arm-and-x86.html), etc.)
+
+### Errata
+
+**1. 2023-11-04:** I claimed that Roaring doesn't use RLE in the Roaring paper summary. The paper does say that, but Roaring
+as of version 0.5 (released in 2015) does support RLE via its RunContainers. You can read more about it
+[in this great blog post](https://richardstartin.github.io/posts/roaringbitmap-performance-tricks) from Richard Startin.
