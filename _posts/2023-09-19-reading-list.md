@@ -20,6 +20,27 @@ Please report errors [on GitHub](https://github.com/ankitsultana/ankitsultana.gi
 ---
 
 <div class="paper-desc">
+Fair Benchmarking Considered Difficult: Common Pitfalls in Database Performance Testing <a href="https://mytherin.github.io/papers/2018-dbtest.pdf">link</a>
+</div>
+
+Not a lot to highlight here, but I'd like to use it as an excuse to echo the message: benchmarking is quite hard,
+and a significant chunk of benchmarking shared online is either unfair, inaccurate, or intentionally
+misleading. The paper does share some good examples to highlight that Database systems are quite complex, and many decisions
+which may seem like minutiae can impact performance significantly. For instance, they outline one benchmark where MariaDB
+performance was worse in comparison to some other DBs, mainly because one of the column types was set to DOUBLE
+instead of DECIMAL.
+
+One other example I'd share is the [CH benchmark](https://benchmark.clickhouse.com). The benchmark numbers indicate that Pinot
+is 37x slower than CH, but when you look at the table-config you'll see that the [Pinot table](https://github.com/ClickHouse/ClickBench/blob/main/pinot/offline_table.json) used in the tests did not have any indexes.
+
+In my opinion, there's no practical way to devise a "fair benchmark" for *most* databases. As a Engineer or Architect,
+if you have to make a decision about which storage technology you should use, you need to do your own research or consult
+some experts on the subject. Another thing I'd like to call out: there are *very few* people who have an
+expertise in more than 1 Database.
+
+---
+
+<div class="paper-desc">
 Umbra: A Disk-Based System with In-Memory Performance <a href="https://www.cidrdb.org/cidr2020/papers/p29-neumann-cidr20.pdf">link</a>
 </div>
 
@@ -212,7 +233,9 @@ already.
 
 One final note on the Ottertune blog: as they have called out, Postgres is still quite an amazing choice particularly for
 use-cases that are not write heavy (has a ton of extensions, query throughput/latency can be 
-[better than MySQL](http://smalldatum.blogspot.com/2023/01/the-insert-benchmark-on-arm-and-x86.html), etc.)
+[better than MySQL](http://smalldatum.blogspot.com/2023/01/the-insert-benchmark-on-arm-and-x86.html) in some cases, etc.)
+
+---
 
 ### Errata
 
