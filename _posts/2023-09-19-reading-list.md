@@ -20,6 +20,72 @@ Please report errors [on GitHub](https://github.com/ankitsultana/ankitsultana.gi
 ---
 
 <div class="paper-desc">
+Cinnamon: Using Century Old Tech to Build a Mean Load Shedder (Uber EngBlog)
+ <a href="https://www.uber.com/blog/cinnamon-using-century-old-tech-to-build-a-mean-load-shedder/">link</a>
+</div>
+
+This 3-part blog explains how Uber designed its new load shedder, Cinnamon. The previous implementation,
+[QALM](https://www.uber.com/blog/qalm-qos-load-management-framework), was based on CoDel and had the
+following issues: 1) maximum number of concurrent requests had to be set by users. this number is
+hard to come up with and is bound to change over time. 2) priorities alone wasn't helping much, since
+a upstream high-priority service may be receiving test traffic. 3) though what seems like a implementation
+detail, using channels for load shedding was turning out to be expensive due to synchronization (and contention?).
+
+Cinnamon solved these by requiring no configuration and has better support for handling priorities. The library
+has 2 main parts:
+
+**[PID Controller](https://www.uber.com/blog/pid-controller-for-cinnamon/)**
+
+This controls the rejection percentage to minimize the queueing time, while ensuring that it doesn't overshoot in 
+rejection and can still keep service utilization high. Priorities for each request are computed using two variables:
+tier of request/calling-service and a "cohort". Cohort allows creating finer granularity for
+traffic in a given tier, and is computed using consistent hashing of the caller. For example: Uber has 6 tiers
+of services, and one could generate 32 cohorts for each tier. This would yield 192 priority values.
+
+The input to the PID Controller is the inflow of requests to the queue, the outflow of requests from the queue, and the
+number of "free slots" in the system. It outputs a single value: the ratio of requests to reject.
+However since we don't want to randomly reject requests, the ratio needs to be mapped back to a priority value.
+For this, Cinammon looks at a sample of 1000 requests, and then finds a threshold based on the CDF.
+
+While the above answers how requests are selected for rejection, how does the PID Controller ensure that it doesn't
+completely kill the service utilization?
+
+**Answer**: The [target function](https://blog.uber-cdn.com/cdn-cgi/image/width=350,quality=80,onerror=redirect,format=auto/wp-content/uploads/2023/11/equation1_resized.png) 
+also depends on number of "free slots" available for running requests.
+
+**[Auto Tuner](https://www.uber.com/blog/cinnamon-auto-tuner-adaptive-concurrency-in-the-wild/)**
+
+It should be noted that PID Controller does NOT control the max *allowed* concurrent requests— it only tries to
+ensure that the service is running as many requests as the service allows.
+
+The natural next question would be: how do we set the max concurrent requests that a service should allow?
+
+One option for this could be to allow users to configure this, but as mentioned already: it is hard to come up
+with a number and either ways it will continue to change over time.
+
+The Auto-Tuner solves this problem. More generally, it solves the problem of keeping throughput high by adjusting
+the maximum number of concurrent requests allowed in a service. This is built based on a modification of 
+the [TCP-Vegas](https://en.wikipedia.org/wiki/TCP_Vegas) congestion control algorithm. The algorithm
+finds the current latency values of the requests and compares them against a target latency. If the latency value
+is higher, then the max concurrent requests allowed should be reduced and vice versa. So the three questions are:
+what value/statistic do we use to calculate the current latency value, how do we compute the target latency, and
+what is the action taken after the same.
+
+To get the latency value, they compute p90 and apply a median filter and exponential smoothing. Moreover, they
+use T-Digest for [computing quantiles](https://github.com/tdunning/t-digest/blob/974f3cc1e754c55f5d8ed018320437b7674fa0cb/core/src/main/java/com/tdunning/math/stats/TDigest.java#L120-L137). 
+To control the action and check whether it is actually helping, they look at a set of time windows (50 intervals) and 
+compute the estimated throughput using [Little's Law](https://en.wikipedia.org/wiki/Little%27s_law).
+Finally, they compute the covariance of the throughput and the target latency on these 50 intervals, and if it is negative,
+the auto-tuner will reduce the inflight limit.
+
+**Side Notes**:
+
+1. T-Digest is also [used by Dremio](https://youtu.be/IOIgcgzw93Y?si=rY_tbYC1pKbZwgL4&t=1168).
+2. Uber has taken inspiration from similar work shared by other companies (e.g. [Netflix](https://github.com/Netflix/concurrency-limits/tree/master)).
+
+---
+
+<div class="paper-desc">
 BtrBlocks: Efficient Columnar Compression for Data Lakes <a href="https://www.cs.cit.tum.de/fileadmin/w00cfj/dis/papers/btrblocks.pdf">link</a>
 </div>
 
