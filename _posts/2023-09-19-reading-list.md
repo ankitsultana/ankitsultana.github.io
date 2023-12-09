@@ -20,6 +20,32 @@ Please report errors [on GitHub](https://github.com/ankitsultana/ankitsultana.gi
 ---
 
 <div class="paper-desc">
+BtrBlocks: Efficient Columnar Compression for Data Lakes <a href="https://www.cs.cit.tum.de/fileadmin/w00cfj/dis/papers/btrblocks.pdf">link</a>
+</div>
+
+Yet another great paper from folks at TUM. This paper introduces a new storage format for open data lakes that
+supposedly gives 2.2x faster scans and is 1.8x cheaper (when compared with Parquet/ORC on a given benchmark).
+The format combines 7 existing encoding schemes and 1 new encoding scheme (called Pseudodecimal Encoding).
+
+Paper is , but I'll share a few things I found most noteworthy:
+1) Parquet uses RLE, Dictionary, Bit-packing and variants of Delta encoding. The paper claims that
+Parquet's set of rules to choose encoding schemes per-column is "simplistic". 2) BtrBlocks supports RLE,
+Dictionary, Frequency, FOR + Bit-packing, FSST, Null vectors via Roaring,
+and Pseudodecimal Encoding. 3) They have also used a variation of Frequency encoding, where they store the
+top-value using a bitmap and the exception values separately. 4) Finding the right schemes to apply is hard
+with these many schemes, hence they use a empirical approach, where they run each scheme on a sample and then
+pick the best one. The overhead of this is kept low by keeping sample size to ~1%. The sample is computed
+by taking consecutive runs of data across random samples 5) Pseudodecimal encoding is very interesting and I'd
+recommend checking it out. At a high-level: it's a encoding scheme for floating point numbers. It works by
+breaking down the number to 3 columns (2 integer columns and 1 floating point column for exceptions).
+The integer columns store the significant digits and the exponent respectively. These 3 columns are then compressed
+using separate compression schemes. However, some hit to decompression speed is expected.
+
+Finally, I'd echo this aphorism on benchmarking: most benchmarks aren't fair, so don't rely on them for crucial decisions.
+
+---
+
+<div class="paper-desc">
 Fair Benchmarking Considered Difficult: Common Pitfalls in Database Performance Testing <a href="https://mytherin.github.io/papers/2018-dbtest.pdf">link</a>
 </div>
 
