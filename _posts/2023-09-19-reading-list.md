@@ -20,6 +20,41 @@ Please report errors [on GitHub](https://github.com/ankitsultana/ankitsultana.gi
 ---
 
 <div class="paper-desc">
+FSST: Fast Random Access String Compression
+ <a href="https://www.vldb.org/pvldb/vol13/p2649-boncz.pdf">link</a>
+</div>
+
+FSST is a lightweight compression algorithm which has been
+[adopted by DuckDB](https://duckdb.org/2022/10/28/lightweight-compression.html).
+For a given blob, it will split it into 4MB chunks, create a sample of 16KB for each chunk, compute an optimal
+symbol table, and use it to compress the chunk. The symbol table is very small: it has 255 1-byte keys (called codes),
+and the values are at most 8 byte values (symbols). (chunk and sample size are configurable)
+
+Some advantages of this over algorithms like LZ4 are: 1) You can evaluate some filters like exact match without decompression.
+This can be achieved by compressing the argument itself with the symbol table, and then running the exact match against
+the compressed data. 2) You can do random reads without having to decompress entire blocks. This can alleviate
+I/O stalls and reduce CPU load. 3) Performance and compression factor of this is better than LZ4 in some cases.
+
+The authors even proposed compressing the Dictionary of a dict-encoded string column using FSST. This seems like a great
+idea to me because: 1) For Dict Encoded Strings, the Dictionary usually takes a much larger amount of space than the
+dictionary integers. 2) Dictionaries often require binary-search, which simulates the random-read access pattern where
+FSST does well. 3) Given the low overhead, you could choose to always compress String Dictionaries.
+
+Additionally, I think FSST can be really helpful for running expensive scans against large volumes of data,
+particularly where prefetching is not implemented (e.g. DBs using MMAP).
+
+However, there are cases where FSST fares much worse than LZ4. Examples: large XML, JSON files, Binary files, etc.
+
+The [implementation](https://github.com/cwida/fsst) shared by the authors employs quite a lot of clever optimizations.
+To highlight some: 1) They have intentionally chosen 8-byte symbols, because you can do unaligned loads on almost every system.
+The small symbol length and the symbol-table size also bodes well for cache efficiency.
+2) If the symbol is smaller than 8-bytes, they still use 8 bytes to store it in the symbol-table. During decompression,
+they always copy 8 bytes, but increment the pointer in the target buffer by the length of the symbol that is stored
+separately, helping them avoid branches and also reduce instruction count.
+
+---
+
+<div class="paper-desc">
 Cinnamon: Using Century Old Tech to Build a Mean Load Shedder (Uber EngBlog)
  <a href="https://www.uber.com/blog/cinnamon-using-century-old-tech-to-build-a-mean-load-shedder/">link</a>
 </div>
