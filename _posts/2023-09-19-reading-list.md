@@ -20,6 +20,15 @@ Please report errors [on GitHub](https://github.com/ankitsultana/ankitsultana.gi
 ---
 
 <div class="paper-desc">
+Don't Hold My Data Hostage – A Case for Client Protocol Redesign
+ <a href="https://www.vldb.org/pvldb/vol10/p1022-muehleisen.pdf">link</a>
+</div>
+
+
+
+---
+
+<div class="paper-desc">
 TAO: Facebook's Distributed Data Store for the Social Graph
  <a href="https://www.usenix.org/system/files/conference/atc13/atc13-bronson.pdf">link</a>
 </div>
