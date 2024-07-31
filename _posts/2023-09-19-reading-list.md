@@ -20,6 +20,74 @@ Please report errors [on GitHub](https://github.com/ankitsultana/ankitsultana.gi
 ---
 
 <div class="paper-desc">
+Measures in SQL
+ <a href="https://dl.acm.org/doi/pdf/10.1145/3626246.3653374">link</a>
+</div>
+
+One of the most common OLAP use-cases is the ability to compute business metrics across multiple
+dimensions. BI Tools or [Decision Support Systems](https://www.dremio.com/wiki/decision-support-system/) like Power BI, Tableau and Looker
+aim to provide a really easy-to-use interface for 1. users who interact with the tools using GUIs, and 2. data scientists/analysts who define how the backing data is modeled (refer [2] for more).
+
+The 90s saw the rise of [Multidimensional Databases](https://www.topcoder.com/thrive/articles/An%20Introduction%20to%20Multidimensional%20Databases) (MDDs),
+which were built on the premise that traditional relational databases' two-dimensional storage model was unsuitable for OLAP. These databases
+had no query language and were tied to their user interface. Subsequently, attempts were made to standardize the API used to access MDDs,
+and finally a query language (MDX) was built for dimensional queries.
+
+There were multiple implementations of MDX: Microsoft Analysis Services, Mondrian, SAP BW and SAS. Some of these were backed by
+relational databases (a technique termed ROLAP) and dimensional languages came to be seen as a semantic layer on top of
+the relational model.
+
+The authors of the paper claim that the main contribution of the semantic layer was not cubes, but the ability to define
+calculations central to the business just once, and to associate columns with some presentation metadata.
+
+The language used by these semantic layers was vendor specific (not SQL) with limited expressibility and
+vendor specific features. This is where Measures in SQL and the paper comes in: it proposes a way to use SQL as the
+language of the semantic layer, by providing a way to express "re-usable calculations" in SQL.
+
+SQL already has a lot of features to express pretty much everything one may want for BI use-cases: CUBES, ROLLUP,
+Window Function, WITHIN GROUP, etc. One may think that re-usable calculations could be achieved via SQL Views,
+but it doesn't always work: for instance if a view defines an aggregation on a particular grouping set, then
+you can only use a subset of that grouping set with a subset of the aggregation functions in your query.
+
+I'll share a quick summary of the Measure syntax with an example. Consider the following query:
+
+```
+SELECT
+  prodName, orderYear,
+  profitMargin,
+  profitMargin AT (SET orderYear = CURRENT orderYear - 1) AS profitMarginLastYear
+FROM (
+    SELECT
+      *,
+      (SUM(revenue) - SUM(cost)) / SUM(revenue) AS MEASURE profitMargin,
+      YEAR (orderDate) AS orderYear
+    FROM Orders
+  )
+WHERE orderYear = 2024
+GROUP BY prodName, orderYear;
+```
+
+The sub-query in the `FROM` clause can be thought of as a View that defines the `profitMargin` measure. A Measure is not exactly an aggregation,
+it simply tells SQL how to compute a metric. The outer query computes the profit margin for the year 2024 and the year 2023.
+
+The `profitMarginLastYear` column illustrates the context-sensitive nature of measures.
+The paper defines context sensitive expressions as expressions whose value is determined by an evaluation context.
+And an evaluation context is a predicate whose terms are one or more columns. The `CURRENT` keyword
+is an example of a "context modifier", which is used to alter the evaluation context.
+
+Finally, this feature has been added to Apache Calcite and hence can be used by many engines now
+([CALCITE-5105](https://issues.apache.org/jira/browse/CALCITE-5105)).
+
+**Related**:
+
+1. You can check out [Gooddata and MAQL](https://www.gooddata.com/docs/cloud/create-metrics/maql/maql-and-multidimensionality/) for an example of a company in this domain.
+2. It also really helps to go through the [LookML](https://cloud.google.com/looker/docs/what-is-lookml) documentation and understand their semantic modeling.
+3. Kishore, who is the founder of [Startree](https://startree.ai/), has a great talk on the [Startree Index](https://docs.pinot.apache.org/basics/indexing/star-tree-index) in Pinot. The talk shares the Index's relevance
+in a broader context and isn't only about implementation details.
+
+---
+
+<div class="paper-desc">
 TAO: Facebook's Distributed Data Store for the Social Graph
  <a href="https://www.usenix.org/system/files/conference/atc13/atc13-bronson.pdf">link</a>
 </div>
