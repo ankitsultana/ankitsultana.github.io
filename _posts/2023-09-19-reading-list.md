@@ -20,6 +20,58 @@ Please report errors [on GitHub](https://github.com/ankitsultana/ankitsultana.gi
 ---
 
 <div class="paper-desc">
+Exploiting Cloud Object Storage for High Performance Analytics
+ <a href="https://www.vldb.org/pvldb/vol16/p2769-durner.pdf">link</a>
+</div>
+
+OLAP use-cases have always been latency sensitive. The reduction in prices of SSDs over the last
+decade have allowed an increasing number of OLAP use-cases to adopt SSDs, leading to a corresponding increase
+in demand for OLAP databases. Even for use-cases which may not be mission-critical, one wants and can
+get low-latency at a reasonable price.
+
+However, SSDs continue to be much more expensive than HDDs, and there are quite a number of use-cases where
+users have a large amount of data (100s of TB), modest QPS (in the 10s or <100) and sub-second p90 latency requirements.
+Often, such use-cases have some access-pattern characteristics which allow data to be either cached or tiered. For instance,
+Startree has implemented [Tiered Storage in Pinot](https://www.youtube.com/watch?v=G8pVMnLmtok) and Apache
+Pinot even comes with a basic [time-based](https://docs.pinot.apache.org/v/release-0.11.0/operators/operating-pinot/tiered-storage)
+tiered storage feature. Singlestore Helios supports "[unlimited storage](https://docs.singlestore.com/cloud/manage-data/database-storage/)"
+when one of the cloud workspaces is used.
+
+Object stores are also quite popular in vector databases. e.g. [Turbopuffer](https://turbopuffer.com/blog/turbopuffer#:~:text=Apply%20for%20access-,turbopuffer%3A%20fast%20search%20on%20object%20storage,-July%2008%2C%202024) is aiming to be "Object Storage Native".
+
+All this is to say: Object stores are an integral part of most modern database systems and there's an opportunity here in
+either building re-usable components that can be plugged into a database engine to manage data between a local disk
+and object store, or building new systems altogether.
+
+This paper (from TUM again) proposes AnyBlob: a download manager that can be plugged into database engines to maximize
+throughput while minimizing CPU. The paper also presents "a blueprint" for performing efficient analytics on object-stores,
+and shares a ton of really useful insights.
+
+To summarize, the key insights regarding object store based analytics are: 1) Many cloud providers have instances that can
+support 8-12 GBps network throughput, which surpasses the disk throughput (bandwidth) they support for their I/O optimized SSDs.
+2) Object store retrieval is priced at per-request and is independent of the response size. Fetching a 1 KB and a 1 TB object
+has the same cost. 3) Per-object download bandwidth has very high variance ranging from 25 to 95 MiB/s. 4) Retrieval latency
+per object starts increasing roughly linearly around 8-16 MiB. For smaller sizes, first-byte latency dominates total runtime
+indicating RTT is the bottleneck. 5) For AWS, since inter-region and inter-AZ network traffic is auto-encrypted, and within
+region no one is able to intercept traffic due to VPC isolation, they have claimed that HTTPS is unnecessary and all experiments
+of theirs were with HTTP. 6) Using HTTPS had 2x the CPU resource requirement of HTTP, but E2E AES only increased CPU by 30%.
+7) AnyBlob supports request hedging, and they restart a download if there's no response for ~600ms. 8) They were also able
+to conclude that Object Stores are based on HDDs given the per-object bandwidth was ~50 MBps and access latency was in the
+tens of ms. 9) They had found that a significant part of the CPU time was spent in dealing with Networking. Anyblob improves
+it, but it underscores why object stores need to manage CPU well. 10) They claim that Umbra integrated with AnyBlob was
+able to beat state of the art data warehouses.
+
+Given the above, AnyBlob tries to maximize the number of concurrent requests (up to 256) to maximize throughput, while keeping the per-request
+size around 8-16 MiB. With this, they were able to achieve 9+ GBps of median bandwidth in AWS. As you would expect, AnyBlob
+uses io_uring to manage multiple connections per thread asynchronously. The paper has also described how they have integrated
+AnyBlob into Umbra and its Morsel based scheduler.
+
+Overall, I feel this is one of the best papers I have read in a while. Thanks to Andy Pavlo for resuming his
+[PVLDB Bot](https://x.com/pvldb?lang=en) which helped me discover this.
+
+---
+
+<div class="paper-desc">
 Measures in SQL
  <a href="https://dl.acm.org/doi/pdf/10.1145/3626246.3653374">link</a>
 </div>
